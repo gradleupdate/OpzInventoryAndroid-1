@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/main_menu_navigation_group">
+        <item
+            android:id="@+id/main_menu_navigation_group_main"
+            android:checkable="false"
+            android:title="@string/toolbar_menu_navigation_group_main" />
+        <item
+            android:id="@+id/main_menu_navigation_group_settings"
+            android:checkable="false"
+            android:title="@string/toolbar_menu_navigation_group_settings" />
+    </group>
+</menu>

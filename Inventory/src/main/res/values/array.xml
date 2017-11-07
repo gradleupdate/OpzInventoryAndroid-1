@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_source_file_mime_types">
+        <!-- source https://blogs.msdn.microsoft.com/vsofficedeveloper/2008/05/08/office-2007-file-format-mime-types-for-http-content-streaming-2/ -->
+        <item>application/vnd.ms-excel</item>
+        <item>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</item>
+        <item>application/vnd.openxmlformats-officedocument.spreadsheetml.template</item>
+        <item>application/vnd.ms-excel.sheet.macroEnabled.12</item>
+        <item>application/vnd.ms-excel.template.macroEnabled.12</item>
+        <item>application/vnd.ms-excel.addin.macroEnabled.12</item>
+        <item>application/vnd.ms-excel.sheet.binary.macroEnabled.12</item>
+    </string-array>
+</resources>

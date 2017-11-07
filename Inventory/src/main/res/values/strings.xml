@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Inventory</string>
+    <string name="logger_fragment_start_external_storage_availability_checking_start" translatable="false">Start checking external storage availability.</string>
+    <string name="logger_fragment_start_external_storage_availability_checking_result_read_write" translatable="false">External storage available for both read and write.</string>
+    <string name="logger_fragment_start_external_storage_availability_checking_result_read_only" translatable="false">External storage available for read only.</string>
+    <string name="logger_fragment_start_external_storage_availability_checking_unavailable" translatable="false">External storage unavailable.</string>
+    <string name="logger_fragment_start_source_workbook_checking_start" translatable="false">Start source workbook checking.</string>
+    <string name="logger_fragment_start_source_workbook_checking_availability_checking_start" translatable="false">Start source workbook availability checking.</string>
+    <string name="logger_fragment_start_source_workbook_checking_workbook_exists" translatable="false">Source workbook exists.</string>
+    <string name="logger_fragment_start_source_workbook_checking_workbook_does_not_exist" translatable="false">Source workbook does not exists.</string>
+    <string name="textview_common_check_passed" translatable="false">OK.</string>
+    <string name="textview_fragment_start_external_storage_availability_checking_start">Start checking external storage availability.</string>
+    <string name="textview_fragment_start_external_storage_availability_checking_result_read_only">External storage available for read only.</string>
+    <string name="textview_fragment_start_external_storage_availability_checking_result_read_write">External storage available for both read and write.</string>
+    <string name="textview_fragment_start_external_storage_availability_checking_result_unavailable">External storage unavailable.</string>
+    <string name="textview_fragment_start_source_workbook_checking_start">Start source workbook checking.</string>
+    <string name="textview_fragment_start_source_workbook_existence_checking_start">Start source workbook availability checking.</string>
+    <string name="textview_fragment_start_source_workbook_exists">Source workbook exists.</string>
+    <string name="textview_fragment_start_source_workbook_does_not_exist">Source workbook does not exists.</string>
+    <string name="title_start_activity">Inventory</string>
+    <string name="title_main_activity">Inventory details</string>
+    <string name="title_settings_activity">Settings</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="pref_source_file_selector">Select source workbook file</string>
+    <string name="pref_default_source_file" translatable="false">source.xls</string>
+    <string name="toolbar_menu_navigation_group_main">Main screen</string>
+    <string name="toolbar_menu_navigation_group_settings">Settings screen</string>
+    <string name="pref_source_file_key" translatable="false">source_file</string>
+    <string name="pref_source_file_root_mime_type" translatable="false">*/*</string>
+    <string name="logger_fragment_settings_invalid_request_code" translatable="false">Invalid request code.</string>
+    <string name="logger_fragment_settings_invalid_result_code" translatable="false">Invalid result code.</string>
+    <string name="pref_source_file_chooser_title">Select source workbook file</string>
+    <string name="logger_fragment_settings_start_processing_source_workbook_selection" translatable="false">Starting processing of source workbook selection with request code %1$s, result code %2$d and result data %3$s.</string>
+    <string name="logger_fragment_settings_empty_result" translatable="false">Provided resultData contains null as data.</string>
+</resources>

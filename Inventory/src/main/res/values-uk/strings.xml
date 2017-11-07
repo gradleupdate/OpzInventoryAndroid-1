@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Інвентаризація</string>
+    <string name="textview_fragment_start_external_storage_availability_checking_start">Починається перевірка наявності зовнішнього сховища.</string>
+    <string name="textview_fragment_start_external_storage_availability_checking_result_read_only">Зовнішнє сховище доступно лише для читання.</string>
+    <string name="textview_fragment_start_external_storage_availability_checking_result_read_write">Зовнішнє сховище доступне для читання та запису.</string>
+    <string name="textview_fragment_start_external_storage_availability_checking_result_unavailable">Зовнішнє сховище не доступне.</string>
+    <string name="textview_fragment_start_source_workbook_checking_start">Починається перевірка вихідної таблиці Excel.</string>
+    <string name="textview_fragment_start_source_workbook_existence_checking_start">Починається перевірка наявності вихідної таблиці Excel.</string>
+    <string name="textview_fragment_start_source_workbook_exists">Вихідна таблиця Excel знайдена.</string>
+    <string name="textview_fragment_start_source_workbook_does_not_exist">Вихідна таблиця Excel не знайдена.</string>
+    <string name="title_start_activity">Інвентаризація</string>
+    <string name="title_main_activity">Деталі інвентаризації</string>
+    <string name="title_settings_activity">Налаштування</string>
+    <string name="toolbar_menu_navigation_group_main">Основний екран</string>
+    <string name="toolbar_menu_navigation_group_settings">Екран налаштувань</string>
+    <string name="pref_source_file_selector">Обрати вихідну таблицю Excel</string>
+    <string name="pref_source_file_chooser_title">Оберіть вихідну таблицю Excel</string>
+</resources>
