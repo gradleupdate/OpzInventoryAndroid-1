@@ -29,8 +29,8 @@ dependencies {
 
     def daggerVersion = '2.11'
     def butterKnifeVersion = '8.8.1'
-    def lifecycleVersion = '1.0.0-rc1'
-    def roomVersion = '1.0.0-rc1'
+    def lifecycleVersion = '1.0.0'
+    def roomVersion = '1.0.0'
 
     annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
     annotationProcessor "com.google.dagger:dagger-android-processor:$daggerVersion"
