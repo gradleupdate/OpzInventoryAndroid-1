@@ -32,7 +32,6 @@ public final class StartPresenterImpl extends BasePresenter<StartView> implement
     private final String LOGGER_EXTERNAL_STORAGE_AVAILABILITY_CHECKING_UNAVAILABLE;
 
     private final String LOGGER_SOURCE_WORKBOOK_CHECKING_START;
-    private final String LOGGER_SOURCE_WORKBOOK_EXISTENCE_CHECKING_START;
     private final String LOGGER_SOURCE_WORKBOOK_EXISTENCE_CHECKING_RESULT_EXISTS;
     private final String LOGGER_SOURCE_WORKBOOK_EXISTENCE_CHECKING_RESULT_DOES_NOT_EXISTS;
 
@@ -74,8 +73,8 @@ public final class StartPresenterImpl extends BasePresenter<StartView> implement
 
         this.LOGGER_SOURCE_WORKBOOK_CHECKING_START =
                 resources.getString(R.string.logger_fragment_start_source_workbook_checking_start);
-        this.LOGGER_SOURCE_WORKBOOK_EXISTENCE_CHECKING_START =
-                resources.getString(R.string.logger_fragment_start_source_workbook_checking_availability_checking_start);
+        /*this.LOGGER_SOURCE_WORKBOOK_EXISTENCE_CHECKING_START =
+                resources.getString(R.string.logger_workbook_service_source_workbook_checking_availability_checking_start);*/
         this.LOGGER_SOURCE_WORKBOOK_EXISTENCE_CHECKING_RESULT_EXISTS =
                 resources.getString(R.string.logger_fragment_start_source_workbook_checking_workbook_exists);
         this.LOGGER_SOURCE_WORKBOOK_EXISTENCE_CHECKING_RESULT_DOES_NOT_EXISTS =
@@ -140,8 +139,6 @@ public final class StartPresenterImpl extends BasePresenter<StartView> implement
     }
 
     private void checkWorkbook() {
-        Log.i(LOGGER_TAG, LOGGER_SOURCE_WORKBOOK_CHECKING_START);
-        Log.i(LOGGER_TAG, LOGGER_SOURCE_WORKBOOK_EXISTENCE_CHECKING_START);
         view.addProgressMessage(TEXTVIEW_SOURCE_WORKBOOK_EXISTENCE_CHECKING_START);
         if(wbSvc.wbExists()) {
             Log.i(LOGGER_TAG, LOGGER_SOURCE_WORKBOOK_EXISTENCE_CHECKING_RESULT_EXISTS);

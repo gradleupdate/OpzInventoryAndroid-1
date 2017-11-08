@@ -72,12 +72,13 @@ public class SettingsPresenterImpl extends BasePresenter<SettingsFragment> imple
                     case Activity.RESULT_OK: {
                         Uri result = resultData.getData();
                         if (result != null) {
+                            String pathToFile = result.getPath().split(":")[1];
                             SharedPreferences sharedPreferences =
                                     PreferenceManager.getDefaultSharedPreferences(context);
                             sharedPreferences
                                     .edit().putString(
                                             context.getResources().getString(R.string.pref_source_file_key),
-                                            result.getPath())
+                                            pathToFile)
                                     .apply();
                         } else Log.d(
                                 LOGGER_TAG,

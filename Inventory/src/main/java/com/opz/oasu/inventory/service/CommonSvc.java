@@ -17,7 +17,7 @@ public final class CommonSvc {
     private final Application application;
 
     @Inject
-    public CommonSvc(Application application) {
+    CommonSvc(Application application) {
         this.application = application;
     }
 

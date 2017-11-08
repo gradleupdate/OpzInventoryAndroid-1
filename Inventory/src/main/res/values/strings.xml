@@ -5,7 +5,7 @@
     <string name="logger_fragment_start_external_storage_availability_checking_result_read_only" translatable="false">External storage available for read only.</string>
     <string name="logger_fragment_start_external_storage_availability_checking_unavailable" translatable="false">External storage unavailable.</string>
     <string name="logger_fragment_start_source_workbook_checking_start" translatable="false">Start source workbook checking.</string>
-    <string name="logger_fragment_start_source_workbook_checking_availability_checking_start" translatable="false">Start source workbook availability checking.</string>
+    <string name="logger_workbook_service_source_workbook_checking_availability_checking_start" translatable="false">Start source workbook availability checking.</string>
     <string name="logger_fragment_start_source_workbook_checking_workbook_exists" translatable="false">Source workbook exists.</string>
     <string name="logger_fragment_start_source_workbook_checking_workbook_does_not_exist" translatable="false">Source workbook does not exists.</string>
     <string name="textview_common_check_passed" translatable="false">OK.</string>

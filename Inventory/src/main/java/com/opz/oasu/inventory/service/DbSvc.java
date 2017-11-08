@@ -12,7 +12,7 @@ public final class DbSvc {
     private final Application application;
 
     @Inject
-    public DbSvc(Application application) {
+    DbSvc(Application application) {
         this.application = application;
     }
 }
