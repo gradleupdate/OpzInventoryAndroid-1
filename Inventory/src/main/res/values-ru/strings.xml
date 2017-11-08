@@ -7,8 +7,8 @@
     <string name="textview_fragment_start_external_storage_availability_checking_result_unavailable">Внешнее хранилище недоступно.</string>
     <string name="textview_fragment_start_source_workbook_checking_start">Начинается проверка  исходной таблицы Excel.</string>
     <string name="textview_fragment_start_source_workbook_existence_checking_start">Начинается проверка доступности исходной таблицы Excel.</string>
-    <string name="textview_fragment_start_source_workbook_exists">Исходная таблица Excel обнаружена.</string>
-    <string name="textview_fragment_start_source_workbook_does_not_exist">Исходная таблица Excel не обнаружена.</string>
+    <string name="textview_fragment_start_source_workbook_existence_checking_result_exists">Исходная таблица Excel обнаружена.</string>
+    <string name="textview_fragment_start_source_workbook_existence_checking_result_does_not_exist">Исходная таблица Excel не обнаружена.</string>
     <string name="title_start_activity">Инвентаризация</string>
     <string name="title_main_activity">Детали инвентаризации</string>
     <string name="title_settings_activity">Настройки</string>
@@ -16,4 +16,7 @@
     <string name="toolbar_menu_navigation_group_settings">Экран настроек</string>
     <string name="pref_source_file_selector">Выбрать исходную таблицу Excel</string>
     <string name="pref_source_file_chooser_title">Выберите исходную таблицу Excel</string>
+    <string name="textview_fragment_start_source_workbook_validity_cheking_start">Начало проверки правильности исходной таблицы Excel.</string>
+    <string name="textview_fragment_start_source_workbook_validity_checking_result_valid">Исходная таблица Excel правильна.</string>
+    <string name="textview_fragment_start_source_workbook_validity_checking_result_invalid">Исходная таблица Excel НЕ правильна.</string>
 </resources>

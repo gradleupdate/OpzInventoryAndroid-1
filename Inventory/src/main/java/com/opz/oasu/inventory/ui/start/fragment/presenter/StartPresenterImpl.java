@@ -34,6 +34,8 @@ public final class StartPresenterImpl extends BasePresenter<StartView> implement
     private final String LOGGER_SOURCE_WORKBOOK_CHECKING_START;
     private final String LOGGER_SOURCE_WORKBOOK_EXISTENCE_CHECKING_RESULT_EXISTS;
     private final String LOGGER_SOURCE_WORKBOOK_EXISTENCE_CHECKING_RESULT_DOES_NOT_EXISTS;
+    private final String LOGGER_SOURCE_WORKBOOK_VALIDITY_CHECKING_RESULT_VALID;
+    private final String LOGGER_SOURCE_WORKBOOK_VALIDITY_CHECKING_RESULT_INVALID;
 
     private final String TEXTVIEW_COMMON_CHECK_PASSED;
 
@@ -46,6 +48,9 @@ public final class StartPresenterImpl extends BasePresenter<StartView> implement
     private final String TEXTVIEW_SOURCE_WORKBOOK_EXISTENCE_CHECKING_START;
     private final String TEXTVIEW_SOURCE_WORKBOOK_EXISTENCE_CHECKING_RESULT_EXISTS;
     private final String TEXTVIEW_SOURCE_WORKBOOK_EXISTENCE_CHECKING_RESULT_DOES_NOT_EXISTS;
+    private final String TEXTVIEW_SOURCE_WORKBOOK_VALIDITY_CHECKING_START;
+    private final String TEXTVIEW_SOURCE_WORKBOOK_VALIDIDTY_CHECKING_RESULT_VALID;
+    private final String TEXTVIEW_SOURCE_WORKBOOK_VALIDITY_CHECKING_RESULT_INVALID;
 
     private final CommonSvc commonSvc;
     private final DbSvc dbSvc;
@@ -73,12 +78,14 @@ public final class StartPresenterImpl extends BasePresenter<StartView> implement
 
         this.LOGGER_SOURCE_WORKBOOK_CHECKING_START =
                 resources.getString(R.string.logger_fragment_start_source_workbook_checking_start);
-        /*this.LOGGER_SOURCE_WORKBOOK_EXISTENCE_CHECKING_START =
-                resources.getString(R.string.logger_workbook_service_source_workbook_checking_availability_checking_start);*/
         this.LOGGER_SOURCE_WORKBOOK_EXISTENCE_CHECKING_RESULT_EXISTS =
-                resources.getString(R.string.logger_fragment_start_source_workbook_checking_workbook_exists);
+                resources.getString(R.string.logger_fragment_start_source_workbook_existence_checking_workbook_exists);
         this.LOGGER_SOURCE_WORKBOOK_EXISTENCE_CHECKING_RESULT_DOES_NOT_EXISTS =
-                resources.getString(R.string.logger_fragment_start_source_workbook_checking_workbook_does_not_exist);
+                resources.getString(R.string.logger_fragment_start_source_workbook_existence_checking_workbook_does_not_exist);
+        this.LOGGER_SOURCE_WORKBOOK_VALIDITY_CHECKING_RESULT_VALID =
+                resources.getString(R.string.logger_fragment_start_source_workbook_validity_checking_result_valid);
+        this.LOGGER_SOURCE_WORKBOOK_VALIDITY_CHECKING_RESULT_INVALID =
+                resources.getString(R.string.logger_fragment_start_source_workbook_validity_checking_result_invalid);
 
         this.TEXTVIEW_COMMON_CHECK_PASSED =
                 resources.getString(R.string.textview_common_check_passed);
@@ -96,9 +103,15 @@ public final class StartPresenterImpl extends BasePresenter<StartView> implement
         this.TEXTVIEW_SOURCE_WORKBOOK_EXISTENCE_CHECKING_START =
                 resources.getString(R.string.textview_fragment_start_source_workbook_existence_checking_start);
         this.TEXTVIEW_SOURCE_WORKBOOK_EXISTENCE_CHECKING_RESULT_EXISTS =
-                resources.getString(R.string.textview_fragment_start_source_workbook_exists);
+                resources.getString(R.string.textview_fragment_start_source_workbook_existence_checking_result_exists);
         this.TEXTVIEW_SOURCE_WORKBOOK_EXISTENCE_CHECKING_RESULT_DOES_NOT_EXISTS =
-                resources.getString(R.string.textview_fragment_start_source_workbook_does_not_exist);
+                resources.getString(R.string.textview_fragment_start_source_workbook_existence_checking_result_does_not_exist);
+        this.TEXTVIEW_SOURCE_WORKBOOK_VALIDITY_CHECKING_START =
+                resources.getString(R.string.textview_fragment_start_source_workbook_validity_cheking_start);
+        this.TEXTVIEW_SOURCE_WORKBOOK_VALIDIDTY_CHECKING_RESULT_VALID =
+                resources.getString(R.string.textview_fragment_start_source_workbook_validity_checking_result_valid);
+        this.TEXTVIEW_SOURCE_WORKBOOK_VALIDITY_CHECKING_RESULT_INVALID =
+                resources.getString(R.string.textview_fragment_start_source_workbook_validity_checking_result_invalid);
 
         this.commonSvc = commonSvc;
         this.dbSvc = dbSvc;
@@ -143,6 +156,14 @@ public final class StartPresenterImpl extends BasePresenter<StartView> implement
         if(wbSvc.wbExists()) {
             Log.i(LOGGER_TAG, LOGGER_SOURCE_WORKBOOK_EXISTENCE_CHECKING_RESULT_EXISTS);
             view.addProgressMessage(TEXTVIEW_SOURCE_WORKBOOK_EXISTENCE_CHECKING_RESULT_EXISTS);
+            view.addProgressMessage(TEXTVIEW_SOURCE_WORKBOOK_VALIDITY_CHECKING_START);
+            if (wbSvc.isWbValid()) {
+                Log.i(LOGGER_TAG, LOGGER_SOURCE_WORKBOOK_VALIDITY_CHECKING_RESULT_VALID);
+                view.addProgressMessage(TEXTVIEW_SOURCE_WORKBOOK_VALIDIDTY_CHECKING_RESULT_VALID);
+            } else {
+                Log.i(LOGGER_TAG, LOGGER_SOURCE_WORKBOOK_VALIDITY_CHECKING_RESULT_INVALID);
+                view.addProgressMessage(TEXTVIEW_SOURCE_WORKBOOK_VALIDITY_CHECKING_RESULT_INVALID);
+            }
         }
         else {
             Log.i(LOGGER_TAG, LOGGER_SOURCE_WORKBOOK_EXISTENCE_CHECKING_RESULT_DOES_NOT_EXISTS);

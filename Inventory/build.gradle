@@ -44,5 +44,6 @@ dependencies {
     implementation "android.arch.lifecycle:extensions:$lifecycleVersion"
     implementation "android.arch.persistence.room:runtime:$roomVersion"
 
-    //compile group: "org.apache.poi", name: "poi", version: "3.17"
+    compile group: "org.apache.poi", name: "poi", version: "3.17"
+    compile group: "org.apache.poi", name: "poi-ooxml", version: "3.17"
 }
