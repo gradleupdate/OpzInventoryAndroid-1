@@ -9,11 +9,16 @@ import android.util.Log;
 
 import com.opz.oasu.inventory.R;
 
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -66,8 +71,21 @@ public class WbSvc {
                 sourceFilePrefValue.substring(sourceFilePrefValue.lastIndexOf(".") + 1);
         switch (sourceFileExtension) {
             case "xls": {
-                HSSFWorkbook workbook = new HSSFWorkbook();
-                return true;
+                try {
+                    HSSFWorkbook workbook = new HSSFWorkbook(new FileInputStream(sourceFile));
+                    HSSFSheet mainSheet = workbook.getSheet("Лист1");
+                    int lastRowNum = mainSheet.getLastRowNum();
+                    for (int i = 1; i <= lastRowNum; i++) {
+                        HSSFRow row = mainSheet.getRow(i);
+                        Log.i(LOGGER_TAG, "Read data from row " + i + ":\n\t" +
+                                "barcode: " + row.getCell(0).getStringCellValue() + ";\n\t" +
+                                "name: " + row.getCell(1).getStringCellValue() + ";\n\t" +
+                                "is marked: " + row.getCell(2).getNumericCellValue() + ";");
+                    }
+                    return true;
+                } catch (IOException ioe) {
+                    Log.e(LOGGER_TAG, null, ioe);
+                }
             }
             case "xlsx": {
                 XSSFWorkbook workbook = new XSSFWorkbook();

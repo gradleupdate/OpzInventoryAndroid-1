@@ -27,6 +27,11 @@ public class MainFragment extends BaseViewFragment<MainPresenter> implements Mai
         super.onViewStateRestored(savedInstanceState);
         presenter.onFragmentStart();
     }
+    /*
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
 
-
+    }
+    */
 }
