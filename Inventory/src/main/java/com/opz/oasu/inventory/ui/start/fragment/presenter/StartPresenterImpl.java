@@ -15,6 +15,8 @@ import com.opz.oasu.inventory.service.WbSvc;
 import com.opz.oasu.inventory.ui.common.view.fragment.presenter.BasePresenter;
 import com.opz.oasu.inventory.ui.start.fragment.view.StartView;
 
+import java.util.Calendar;
+
 import static com.opz.oasu.inventory.service.CommonSvc.EXT_STORAGE_READ_ONLY_AVAILABLE;
 import static com.opz.oasu.inventory.service.CommonSvc.EXT_STORAGE_READ_WRITE_AVAILABLE;
 import static com.opz.oasu.inventory.service.CommonSvc.EXT_STORAGE_UNAVAILABLE;
@@ -69,7 +71,10 @@ public final class StartPresenterImpl extends BasePresenter<StartView> implement
         this.context = context;
         Resources resources = this.context.getResources();
 
-        this.APP_DB_NAME = resources.getString(R.string.app_db_name);
+        final String dbNameTemplate = resources.getString(R.string.app_db_name);
+        this.APP_DB_NAME = dbNameTemplate.replace(
+                ".",
+                "_" + Integer.toString(Calendar.getInstance().get(Calendar.YEAR)) + ".");
 
         this.LOGGER_EXTERNAL_STORAGE_AVAILABILITY_CHECKING_START =
                 resources.getString(R.string.logger_fragment_start_external_storage_availability_checking_start);
