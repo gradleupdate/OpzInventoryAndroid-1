@@ -19,4 +19,5 @@
     <string name="textview_fragment_start_source_workbook_validity_cheking_start">Начало проверки правильности исходной таблицы Excel.</string>
     <string name="textview_fragment_start_source_workbook_validity_checking_result_valid">Исходная таблица Excel правильна.</string>
     <string name="textview_fragment_start_source_workbook_validity_checking_result_invalid">Исходная таблица Excel НЕ правильна.</string>
+    <string name="button_fragment_workbook_controls_add_workbook_content">Добавить данные из файла Excel</string>
 </resources>
