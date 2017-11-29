@@ -26,6 +26,8 @@ public final class StartPresenterImpl extends BasePresenter<StartView> implement
 
     private final Context context;
 
+    private final String APP_DB_NAME;
+
     private final String LOGGER_EXTERNAL_STORAGE_AVAILABILITY_CHECKING_START;
     private final String LOGGER_EXTERNAL_STORAGE_AVAILABILITY_CHECKING_RESULT_READ_WRITE;
     private final String LOGGER_EXTERNAL_STORAGE_AVAILABILITY_CHECKING_RESULT_READ_ONLY;
@@ -66,6 +68,8 @@ public final class StartPresenterImpl extends BasePresenter<StartView> implement
         super(view);
         this.context = context;
         Resources resources = this.context.getResources();
+
+        this.APP_DB_NAME = resources.getString(R.string.app_db_name);
 
         this.LOGGER_EXTERNAL_STORAGE_AVAILABILITY_CHECKING_START =
                 resources.getString(R.string.logger_fragment_start_external_storage_availability_checking_start);
@@ -148,7 +152,7 @@ public final class StartPresenterImpl extends BasePresenter<StartView> implement
 
         checkWorkbook();
 
-        Room.inMemoryDatabaseBuilder(context.getApplicationContext(), Db.class).build();
+        Room.databaseBuilder(context.getApplicationContext(), Db.class, APP_DB_NAME).build();
     }
 
     private void checkWorkbook() {

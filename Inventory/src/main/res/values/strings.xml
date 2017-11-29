@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Inventory</string>
+    <string name="app_db_name" translatable="false">inventory.sqlite3</string>
     <string name="logger_fragment_start_external_storage_availability_checking_start" translatable="false">Start checking external storage availability.</string>
     <string name="logger_fragment_start_external_storage_availability_checking_result_read_write" translatable="false">External storage available for both read and write.</string>
     <string name="logger_fragment_start_external_storage_availability_checking_result_read_only" translatable="false">External storage available for read only.</string>
