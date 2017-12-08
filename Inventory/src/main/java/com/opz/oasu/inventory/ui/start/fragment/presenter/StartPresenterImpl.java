@@ -28,7 +28,7 @@ public final class StartPresenterImpl extends BasePresenter<StartView> implement
 
     private final Context context;
 
-    private final String APP_DB_NAME;
+    //private final String APP_DB_NAME;
 
     private final String LOGGER_EXTERNAL_STORAGE_AVAILABILITY_CHECKING_START;
     private final String LOGGER_EXTERNAL_STORAGE_AVAILABILITY_CHECKING_RESULT_READ_WRITE;
@@ -71,10 +71,12 @@ public final class StartPresenterImpl extends BasePresenter<StartView> implement
         this.context = context;
         Resources resources = this.context.getResources();
 
+        /*
         final String dbNameTemplate = resources.getString(R.string.app_db_name);
         this.APP_DB_NAME = dbNameTemplate.replace(
                 ".",
                 "_" + Integer.toString(Calendar.getInstance().get(Calendar.YEAR)) + ".");
+                */
 
         this.LOGGER_EXTERNAL_STORAGE_AVAILABILITY_CHECKING_START =
                 resources.getString(R.string.logger_fragment_start_external_storage_availability_checking_start);
@@ -157,7 +159,7 @@ public final class StartPresenterImpl extends BasePresenter<StartView> implement
 
         checkWorkbook();
 
-        Room.databaseBuilder(context.getApplicationContext(), Db.class, APP_DB_NAME).build();
+        //Room.databaseBuilder(context.getApplicationContext(), Db.class, APP_DB_NAME).build(); // TODO: move db creation to listener of new inventory button
     }
 
     private void checkWorkbook() {

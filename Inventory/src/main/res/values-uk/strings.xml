@@ -19,5 +19,7 @@
     <string name="textview_fragment_start_source_workbook_validity_cheking_start">Початок перевірки вірності вихідної таблиці Excel.</string>
     <string name="textview_fragment_start_source_workbook_validity_checking_result_valid">Вихідна таблиця Excel вірна.</string>
     <string name="textview_fragment_start_source_workbook_validity_checking_result_invalid">Вихідна таблиця Excel НЕ вірна.</string>
-    <string name="button_fragment_workbook_controls_add_workbook_content">Додати дані з файлу Excel.</string>
+    <string name="button_fragment_workbook_controls_add_workbook_content">Додати дані з файлу Excel</string>
+    <string name="button_fragment_start_new_inventory">Почати нову інвентаризацію</string>
+    <string name="button_fragment_start_view_inventory_history">Переглянути історію інвентаризацій</string>
 </resources>

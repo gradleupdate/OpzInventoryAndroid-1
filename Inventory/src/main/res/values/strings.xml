@@ -40,4 +40,6 @@
     <string name="textview_fragment_start_source_workbook_validity_checking_result_invalid">Source workbook is invalid.</string>
     <string name="logger_workbook_service_source_workbook_checking_validity_checking_start" translatable="false">Start source workbook validity checking.</string>
     <string name="button_fragment_workbook_controls_add_workbook_content">Add workbook content</string>
+    <string name="button_fragment_start_new_inventory">Start new inventory</string>
+    <string name="button_fragment_start_view_inventory_history">View inventory history</string>
 </resources>
