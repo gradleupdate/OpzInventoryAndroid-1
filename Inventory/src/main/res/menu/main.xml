@@ -3,9 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:id="@+id/main_menu_navigation_group">
         <item
-            android:id="@+id/main_menu_navigation_group_main"
+            android:id="@+id/main_menu_navigation_group_start"
             android:checkable="false"
-            android:title="@string/toolbar_menu_navigation_group_main" />
+            android:title="@string/toolbar_menu_navigation_group_start" />
         <item
             android:id="@+id/main_menu_navigation_group_settings"
             android:checkable="false"

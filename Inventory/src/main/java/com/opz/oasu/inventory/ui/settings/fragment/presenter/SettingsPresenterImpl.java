@@ -22,6 +22,11 @@ import javax.inject.Inject;
 
 public class SettingsPresenterImpl extends BasePresenter<SettingsFragment> implements SettingsPresenter {
 
+    @Inject
+    SettingsPresenterImpl(SettingsFragment view) {
+        super(view);
+    }
+    /*
     private static final String LOGGER_TAG = SettingsPresenterImpl.class.getName();
 
     private final Context context;
@@ -96,5 +101,5 @@ public class SettingsPresenterImpl extends BasePresenter<SettingsFragment> imple
             }
         }
     }
-
+    */
 }

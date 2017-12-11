@@ -24,7 +24,7 @@
     <string name="action_settings" translatable="false">Settings</string>
     <string name="pref_source_file_selector">Select source workbook file</string>
     <string name="pref_default_source_file" translatable="false">source.xls</string>
-    <string name="toolbar_menu_navigation_group_main">Main screen</string>
+    <string name="toolbar_menu_navigation_group_start">Start screen</string>
     <string name="toolbar_menu_navigation_group_settings">Settings screen</string>
     <string name="pref_source_file_key" translatable="false">source_file</string>
     <string name="pref_source_file_root_mime_type" translatable="false">*/*</string>

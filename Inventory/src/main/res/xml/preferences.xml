@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <Preference
+    <!--Preference
         android:defaultValue="@string/pref_default_source_file"
         android:icon="@android:drawable/ic_menu_search"
         android:key="@string/pref_source_file_key"
         android:selectAllOnFocus="true"
-        android:title="@string/pref_source_file_selector"/>
+        android:title="@string/pref_source_file_selector"/-->
 </PreferenceScreen>

@@ -12,7 +12,7 @@
     <string name="title_start_activity">Инвентаризация</string>
     <string name="title_main_activity">Детали инвентаризации</string>
     <string name="title_settings_activity">Настройки</string>
-    <string name="toolbar_menu_navigation_group_main">Основной экран</string>
+    <string name="toolbar_menu_navigation_group_start">Начальный экран</string>
     <string name="toolbar_menu_navigation_group_settings">Экран настроек</string>
     <string name="pref_source_file_selector">Выбрать исходную таблицу Excel</string>
     <string name="pref_source_file_chooser_title">Выберите исходную таблицу Excel</string>

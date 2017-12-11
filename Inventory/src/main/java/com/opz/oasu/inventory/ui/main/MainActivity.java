@@ -42,7 +42,7 @@ public class MainActivity extends BaseActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
-        MenuItem mainMenuItem = menu.findItem(R.id.main_menu_navigation_group_main);
+        MenuItem mainMenuItem = menu.findItem(R.id.main_menu_navigation_group_start);
         mainMenuItem.setEnabled(false);
         mainMenuItem.setVisible(false);
         return super.onCreateOptionsMenu(menu);
