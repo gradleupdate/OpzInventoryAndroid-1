@@ -53,7 +53,7 @@ public class MainActivity extends BaseActivity {
         int id = menuItem.getItemId();
         switch (id) {
             case R.id.main_menu_navigation_group_settings: {
-                navigator.startSettingsActivity(MainActivity.this);
+                navigator.startSettingsActivity(this);
                 break;
             }
         }

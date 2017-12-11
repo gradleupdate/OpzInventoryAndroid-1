@@ -19,10 +19,9 @@
             android:name=".ui.start.StartActivity"
             android:label="@string/title_start_activity"
             android:noHistory="true"
-            android:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar">
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
