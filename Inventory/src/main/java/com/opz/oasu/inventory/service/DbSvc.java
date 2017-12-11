@@ -1,6 +1,9 @@
 package com.opz.oasu.inventory.service;
 
 import android.app.Application;
+import android.arch.persistence.room.Room;
+
+import com.opz.oasu.inventory.db.Db;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -14,5 +17,9 @@ public final class DbSvc {
     @Inject
     DbSvc(Application application) {
         this.application = application;
+    }
+
+    public void createNewInventoryRoom(String dbName) {
+        Room.databaseBuilder(application.getApplicationContext(), Db.class, dbName).build();
     }
 }

@@ -8,9 +8,9 @@ import com.opz.oasu.inventory.IntentRequestCodes;
 
 
 public interface SettingsPresenter extends Presenter {
-    /*
-    void onFragmentStarts();
 
+    void onFragmentStarts();
+    /*
     void processActivityResult(IntentRequestCodes requestCode, int resultCode, Intent resultData);
     */
 }

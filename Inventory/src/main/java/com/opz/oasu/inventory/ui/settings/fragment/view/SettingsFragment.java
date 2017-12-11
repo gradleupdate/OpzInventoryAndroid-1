@@ -88,7 +88,7 @@ public class SettingsFragment extends PreferenceFragment implements SettingsView
         }
         super.onAttach(context);
     }
-
+    /*
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent resultData) {
         super.onActivityResult(requestCode, resultCode, resultData);
@@ -101,5 +101,5 @@ public class SettingsFragment extends PreferenceFragment implements SettingsView
                 PreferenceManager.getDefaultSharedPreferences(getActivity())
                         .getString(sourceFile, sourceFile));
     }
-
+    */
 }

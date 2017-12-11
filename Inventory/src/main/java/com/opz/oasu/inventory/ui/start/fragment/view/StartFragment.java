@@ -10,8 +10,16 @@ import com.opz.oasu.inventory.R;
 import com.opz.oasu.inventory.ui.common.view.fragment.BaseViewFragment;
 import com.opz.oasu.inventory.ui.start.fragment.presenter.StartPresenter;
 
+import javax.inject.Inject;
+
+import butterknife.OnClick;
+
 
 public class StartFragment extends BaseViewFragment<StartPresenter> implements StartView {
+
+    @Inject
+    StartFragmentActionListener listener;
+
 
     @Override
     public View onCreateView(
@@ -21,4 +29,8 @@ public class StartFragment extends BaseViewFragment<StartPresenter> implements S
         return layoutInflater.inflate(R.layout.fragment_start, container, false);
     }
 
+    @OnClick(R.id.fragment_start_start_new_inventory_button)
+    void onStartNewInventoryButtonClick() {
+        presenter.createNewInventory();
+    }
 }

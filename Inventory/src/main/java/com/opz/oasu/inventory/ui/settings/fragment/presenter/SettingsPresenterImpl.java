@@ -56,12 +56,12 @@ public class SettingsPresenterImpl extends BasePresenter<SettingsFragment> imple
         this.wbSvc = wbSvc;
         this.dbSvc = dbSvc;
     }
-
+    */
     @Override
     public void onFragmentStarts() {
 
     }
-
+    /*
     @Override
     public void processActivityResult(IntentRequestCodes requestCode, int resultCode, Intent resultData) {
         Log.d(

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!--TODO: add preference to store CURRENT inventory from available list-->
+
     <!--Preference
         android:defaultValue="@string/pref_default_source_file"
         android:icon="@android:drawable/ic_menu_search"

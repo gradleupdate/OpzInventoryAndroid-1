@@ -5,10 +5,7 @@
     <string name="logger_fragment_start_external_storage_availability_checking_result_read_write" translatable="false">External storage available for both read and write.</string>
     <string name="logger_fragment_start_external_storage_availability_checking_result_read_only" translatable="false">External storage available for read only.</string>
     <string name="logger_fragment_start_external_storage_availability_checking_unavailable" translatable="false">External storage unavailable.</string>
-    <string name="logger_fragment_start_source_workbook_checking_start" translatable="false">Start source workbook checking.</string>
     <string name="logger_workbook_service_source_workbook_checking_availability_checking_start" translatable="false">Start source workbook availability checking.</string>
-    <string name="logger_fragment_start_source_workbook_existence_checking_workbook_exists" translatable="false">Source workbook exists.</string>
-    <string name="logger_fragment_start_source_workbook_existence_checking_workbook_does_not_exist" translatable="false">Source workbook does not exists.</string>
     <string name="textview_common_check_passed" translatable="false">OK.</string>
     <string name="textview_fragment_start_external_storage_availability_checking_start">Start checking external storage availability.</string>
     <string name="textview_fragment_start_external_storage_availability_checking_result_read_only">External storage available for read only.</string>
@@ -34,12 +31,12 @@
     <string name="logger_fragment_settings_start_processing_source_workbook_selection" translatable="false">Starting processing of source workbook selection with request code %1$s, result code %2$d and result data %3$s.</string>
     <string name="logger_fragment_settings_empty_result" translatable="false">Provided resultData contains null as data.</string>
     <string name="textview_fragment_start_source_workbook_validity_cheking_start">Start source workbook validity checking.</string>
-    <string name="logger_fragment_start_source_workbook_validity_checking_result_valid" translatable="false">Source workbook is valid.</string>
     <string name="textview_fragment_start_source_workbook_validity_checking_result_valid">Source workbook is valid.</string>
-    <string name="logger_fragment_start_source_workbook_validity_checking_result_invalid" translatable="false">Source workbook is invalid.</string>
     <string name="textview_fragment_start_source_workbook_validity_checking_result_invalid">Source workbook is invalid.</string>
     <string name="logger_workbook_service_source_workbook_checking_validity_checking_start" translatable="false">Start source workbook validity checking.</string>
     <string name="button_fragment_workbook_controls_add_workbook_content">Add workbook content</string>
     <string name="button_fragment_start_new_inventory">Start new inventory</string>
     <string name="button_fragment_start_view_inventory_history">View inventory history</string>
+    <string name="logger_fragment_start_start_creating_new_inventory" translatable="false">Start creating new inventory.</string>
+    <string name="logger_fragment_start_finish_creating_new_inventory" translatable="false">Finish creating new inventory %1$s</string>
 </resources>
