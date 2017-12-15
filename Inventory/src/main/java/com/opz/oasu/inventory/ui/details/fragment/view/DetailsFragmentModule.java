@@ -1,10 +1,10 @@
-package com.opz.oasu.inventory.ui.main.fragment.view;
+package com.opz.oasu.inventory.ui.details.fragment.view;
 
 import android.app.Fragment;
 
 import com.opz.oasu.inventory.di.FragmentScope;
 import com.opz.oasu.inventory.ui.common.view.fragment.BaseFragmentModule;
-import com.opz.oasu.inventory.ui.main.fragment.presenter.MainPresenterModule;
+import com.opz.oasu.inventory.ui.details.fragment.presenter.DetailsPresenterModule;
 
 import javax.inject.Named;
 
@@ -14,15 +14,15 @@ import dagger.Module;
 
 @Module(includes = {
         BaseFragmentModule.class,
-        MainPresenterModule.class})
-public abstract class MainFragmentModule {
+        DetailsPresenterModule.class})
+public abstract class DetailsFragmentModule {
 
     @Binds
     @Named(BaseFragmentModule.FRAGMENT)
     @FragmentScope
-    abstract Fragment fragment(MainFragment mainFragment);
+    abstract Fragment fragment(DetailsFragment mainFragment);
 
     @Binds
     @FragmentScope
-    abstract MainView mainView(MainFragment mainFragment);
+    abstract DetailsView mainView(DetailsFragment mainFragment);
 }

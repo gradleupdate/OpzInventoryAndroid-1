@@ -9,7 +9,6 @@ import android.widget.Toolbar;
 import com.opz.oasu.inventory.R;
 import com.opz.oasu.inventory.navigation.Navigator;
 import com.opz.oasu.inventory.ui.common.BaseActivity;
-import com.opz.oasu.inventory.ui.main.MainActivity;
 import com.opz.oasu.inventory.ui.start.fragment.view.StartFragment;
 import com.opz.oasu.inventory.ui.start.fragment.view.StartFragmentActionListener;
 

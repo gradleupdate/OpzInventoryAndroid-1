@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!--TODO: add preference to store CURRENT inventory from available list-->
+    <Preference
+        android:key="@string/pref_key_current_inventory_db"
+        android:title="@string/pref_title_current_inventory_db" />
 
-    <!--Preference
-        android:defaultValue="@string/pref_default_source_file"
-        android:icon="@android:drawable/ic_menu_search"
-        android:key="@string/pref_source_file_key"
-        android:selectAllOnFocus="true"
-        android:title="@string/pref_source_file_selector"/-->
+    <MultiSelectListPreference
+        android:key="@string/pref_key_table_columns"
+        android:title="@string/pref_title_table_columns"
+        android:entries="@array/pref_content_column_headers"
+        android:entryValues="@array/pref_content_column_headers_values"
+        android:defaultValue="@array/pref_default_content_column_headers" />
+
 </PreferenceScreen>

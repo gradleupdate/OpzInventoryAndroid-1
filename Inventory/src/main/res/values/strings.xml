@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Inventory</string>
-    <string name="app_db_name" translatable="false">inventory.sqlite3</string>
     <string name="logger_fragment_start_external_storage_availability_checking_start" translatable="false">Start checking external storage availability.</string>
     <string name="logger_fragment_start_external_storage_availability_checking_result_read_write" translatable="false">External storage available for both read and write.</string>
     <string name="logger_fragment_start_external_storage_availability_checking_result_read_only" translatable="false">External storage available for read only.</string>
@@ -19,15 +18,11 @@
     <string name="title_main_activity">Inventory details</string>
     <string name="title_settings_activity">Settings</string>
     <string name="action_settings" translatable="false">Settings</string>
-    <string name="pref_source_file_selector">Select source workbook file</string>
-    <string name="pref_default_source_file" translatable="false">source.xls</string>
     <string name="toolbar_menu_navigation_group_start">Start screen</string>
     <string name="toolbar_menu_navigation_group_settings">Settings screen</string>
-    <string name="pref_source_file_key" translatable="false">source_file</string>
     <string name="pref_source_file_root_mime_type" translatable="false">*/*</string>
     <string name="logger_fragment_settings_invalid_request_code" translatable="false">Invalid request code.</string>
     <string name="logger_fragment_settings_invalid_result_code" translatable="false">Invalid result code.</string>
-    <string name="pref_source_file_chooser_title">Select source workbook file</string>
     <string name="logger_fragment_settings_start_processing_source_workbook_selection" translatable="false">Starting processing of source workbook selection with request code %1$s, result code %2$d and result data %3$s.</string>
     <string name="logger_fragment_settings_empty_result" translatable="false">Provided resultData contains null as data.</string>
     <string name="textview_fragment_start_source_workbook_validity_cheking_start">Start source workbook validity checking.</string>
@@ -39,4 +34,28 @@
     <string name="button_fragment_start_view_inventory_history">View inventory history</string>
     <string name="logger_fragment_start_start_creating_new_inventory" translatable="false">Start creating new inventory.</string>
     <string name="logger_fragment_start_finish_creating_new_inventory" translatable="false">Finish creating new inventory %1$s</string>
+    <string name="pref_key_current_inventory_db" translatable="false">current_inventory_db</string>
+    <string name="pref_title_current_inventory_db">Inventory to work with</string>
+    <string name="pref_current_inventory_not_set">Current inventory not set</string>
+    <string name="pref_key_table_columns">table_columns</string>
+    <string name="pref_title_table_columns">Table columns to view</string>
+    <string name="const_content_column_header_name_barcode">Barcode</string>
+    <string name="const_content_column_header_name_sap_number">SAP Number</string>
+    <string name="const_content_column_header_name_inventory_class">Inventory Class</string>
+    <string name="const_content_column_header_name_introduction_date">Introduction Date</string>
+    <string name="const_content_column_header_name_serial_number">Serial Number</string>
+    <string name="const_content_column_header_name_inventory_number">Inventory Number</string>
+    <string name="const_content_column_header_name_is_marked">Is Marked</string>
+    <string name="const_content_column_header_name_department_number">Department Number</string>
+    <string name="const_content_column_header_name_department_description">Department Description</string>
+    <string name="const_content_column_header_name_plan_count">Plan Count</string>
+    <string name="const_content_column_header_name_object_count">Object Count</string>
+    <string name="const_content_column_header_name_is_new">Is New</string>
+    <string name="const_content_column_header_name_is_deleted">Is Deleted</string>
+    <string name="const_content_column_header_name_type_label">Type Label</string>
+    <string name="const_content_column_header_name_least_cost">Least Cost</string>
+    <string name="const_content_column_header_name_responsible_person_name">Responsible Person Name</string>
+    <string name="const_content_column_header_name_responsible_person_table_number">Responsible Person Table Number</string>
+    <string name="const_content_column_header_name_location">Location</string>
+    <string name="pref_show_columns_not_set">Show columns not set.</string>
 </resources>

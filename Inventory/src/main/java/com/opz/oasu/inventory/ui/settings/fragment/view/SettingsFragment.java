@@ -3,16 +3,20 @@ package com.opz.oasu.inventory.ui.settings.fragment.view;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
+import android.widget.Toast;
 
 import com.opz.oasu.inventory.R;
 import com.opz.oasu.inventory.IntentRequestCodes;
 import com.opz.oasu.inventory.ui.settings.fragment.presenter.SettingsPresenter;
+
+import java.util.HashSet;
 
 import javax.inject.Inject;
 
@@ -26,6 +30,13 @@ public class SettingsFragment extends PreferenceFragment implements SettingsView
     SettingsPresenter settingsPresenter;
 
     private Resources resources;
+
+    private String inventoryName;
+    private Preference inventoryNamePreference;
+
+    private String showColumnsName;
+    private Preference showColumnsPreference;
+
     private String sourceFile;
     private Preference sourceFilePreference;
 
@@ -35,6 +46,43 @@ public class SettingsFragment extends PreferenceFragment implements SettingsView
         addPreferencesFromResource(R.xml.preferences);
 
         this.resources = getResources();
+        final SharedPreferences sharedPreferences =
+                PreferenceManager.getDefaultSharedPreferences(getActivity());
+
+        this.inventoryName = resources.getString(R.string.pref_key_current_inventory_db);
+        this.inventoryNamePreference = findPreference(inventoryName);
+        setInventoryNamePreferenceSummary(sharedPreferences);
+        inventoryNamePreference.setOnPreferenceClickListener(
+                new Preference.OnPreferenceClickListener() {
+
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                Toast.makeText(getActivity(), "Test onPreferenceClick", Toast.LENGTH_LONG).show();
+                return true;
+            }
+        });
+
+        this.showColumnsName = resources.getString(R.string.pref_key_table_columns);
+        this.showColumnsPreference = findPreference(showColumnsName);
+        setShowColumnsPreferenceSummary(sharedPreferences);
+
+        SharedPreferences.OnSharedPreferenceChangeListener onSharedPreferenceChangeListener =
+                new SharedPreferences.OnSharedPreferenceChangeListener() {
+            @Override
+            public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+                if (key.equals(inventoryName)) {
+                    setInventoryNamePreferenceSummary(sharedPreferences);
+                }
+                if (key.equals(showColumnsName)) {
+                    setShowColumnsPreferenceSummary(sharedPreferences);
+                }
+            }
+        };
+        PreferenceManager.getDefaultSharedPreferences(getActivity())
+                .registerOnSharedPreferenceChangeListener(onSharedPreferenceChangeListener);
+        // TODO: get column names not indexes
+
+        /*
         this.sourceFile = resources.getString(R.string.pref_source_file_key);
         this.sourceFilePreference = findPreference(sourceFile);
 
@@ -42,7 +90,7 @@ public class SettingsFragment extends PreferenceFragment implements SettingsView
                 PreferenceManager.getDefaultSharedPreferences(
                         getActivity())
                 .getString(sourceFile, sourceFile));
-
+        /*
         sourceFilePreference.setOnPreferenceClickListener(
                 new Preference.OnPreferenceClickListener() {
 
@@ -62,6 +110,7 @@ public class SettingsFragment extends PreferenceFragment implements SettingsView
                         return true;
                     }
                 });
+                */
     }
 
     @Override
@@ -102,4 +151,23 @@ public class SettingsFragment extends PreferenceFragment implements SettingsView
                         .getString(sourceFile, sourceFile));
     }
     */
+
+    private void setInventoryNamePreferenceSummary(SharedPreferences sharedPreferences) {
+        //Log.i(SettingsFragment.class.getName(), "Running setInventoryNamePreferenceSummary");
+        String inventoryNamePreferenceSummary =
+                sharedPreferences.getString(inventoryName, null);
+        if (inventoryNamePreferenceSummary == null)
+            inventoryNamePreferenceSummary = resources.getString(R.string.pref_current_inventory_not_set);
+        inventoryNamePreference.setSummary(inventoryNamePreferenceSummary);
+    }
+
+    private void setShowColumnsPreferenceSummary(SharedPreferences sharedPreferences) {
+        String showColumnsPreferenceSummary =
+                sharedPreferences.getStringSet(
+                        showColumnsName,
+                        new HashSet<String>()).toString();
+        if (showColumnsPreferenceSummary == null)
+            showColumnsPreferenceSummary = resources.getString(R.string.pref_show_columns_not_set);
+        showColumnsPreference.setSummary(showColumnsPreferenceSummary);
+    }
 }

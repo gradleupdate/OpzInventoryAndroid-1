@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="pref_source_file_mime_types">
+    <string-array name="pref_source_file_mime_types" translatable="false">
         <!-- source https://blogs.msdn.microsoft.com/vsofficedeveloper/2008/05/08/office-2007-file-format-mime-types-for-http-content-streaming-2/ -->
         <item>application/vnd.ms-excel</item>
         <item>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</item>
@@ -9,5 +9,59 @@
         <item>application/vnd.ms-excel.template.macroEnabled.12</item>
         <item>application/vnd.ms-excel.addin.macroEnabled.12</item>
         <item>application/vnd.ms-excel.sheet.binary.macroEnabled.12</item>
+    </string-array>
+
+    <string-array name="pref_content_column_headers">
+        <item>@string/const_content_column_header_name_barcode</item>
+        <item>@string/const_content_column_header_name_sap_number</item>
+        <item>@string/const_content_column_header_name_inventory_class</item>
+        <item>@string/const_content_column_header_name_introduction_date</item>
+        <item>@string/const_content_column_header_name_serial_number</item>
+        <item>@string/const_content_column_header_name_inventory_number</item>
+        <item>@string/const_content_column_header_name_is_marked</item>
+        <item>@string/const_content_column_header_name_department_number</item>
+        <item>@string/const_content_column_header_name_department_description</item>
+        <item>@string/const_content_column_header_name_plan_count</item>
+        <item>@string/const_content_column_header_name_object_count</item>
+        <item>@string/const_content_column_header_name_is_new</item>
+        <item>@string/const_content_column_header_name_is_deleted</item>
+        <item>@string/const_content_column_header_name_type_label</item>
+        <item>@string/const_content_column_header_name_least_cost</item>
+        <item>@string/const_content_column_header_name_responsible_person_name</item>
+        <item>@string/const_content_column_header_name_responsible_person_table_number</item>
+        <item>@string/const_content_column_header_name_location</item>
+    </string-array>
+
+    <string-array name="pref_default_content_column_headers">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+    </string-array>
+
+    <string-array name="pref_content_column_headers_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
     </string-array>
 </resources>

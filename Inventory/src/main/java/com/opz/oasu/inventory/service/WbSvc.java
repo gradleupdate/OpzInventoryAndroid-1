@@ -32,8 +32,8 @@ public class WbSvc {
     private final Application application;
     private final SharedPreferences sharedPreferences;
 
-    private final String prefSourceFileKey;
-    private final String defaultSourceFilePref;
+    //private final String prefSourceFileKey;
+    //private final String defaultSourceFilePref;
     private final String LOGGER_SOURCE_WORKBOOK_EXISTENCE_CHECKING_START;
     private final String LOGGER_SOURCE_WORKBOOK_VALIDITY_CHECKING_START;
 
@@ -43,15 +43,15 @@ public class WbSvc {
         this.sharedPreferences = PreferenceManager.getDefaultSharedPreferences(application);
 
         Resources resources = this.application.getResources();
-        this.prefSourceFileKey = resources.getString(R.string.pref_source_file_key);
-        this.defaultSourceFilePref = resources.getString(R.string.pref_default_source_file);
+        //this.prefSourceFileKey = resources.getString(R.string.pref_source_file_key);
+        //this.defaultSourceFilePref = resources.getString(R.string.pref_default_source_file);
 
         this.LOGGER_SOURCE_WORKBOOK_EXISTENCE_CHECKING_START =
                 resources.getString(R.string.logger_workbook_service_source_workbook_checking_availability_checking_start);
         this.LOGGER_SOURCE_WORKBOOK_VALIDITY_CHECKING_START =
                 resources.getString(R.string.logger_workbook_service_source_workbook_checking_validity_checking_start);
     }
-
+    /*
     public boolean wbExists() {
         Log.d(LOGGER_TAG, LOGGER_SOURCE_WORKBOOK_EXISTENCE_CHECKING_START);
         final String sourceFilePrefValue =
@@ -96,4 +96,5 @@ public class WbSvc {
             }
         }
     }
+    */
 }

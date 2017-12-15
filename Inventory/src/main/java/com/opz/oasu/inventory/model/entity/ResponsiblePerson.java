@@ -23,7 +23,7 @@ public class ResponsiblePerson {
     static final String ID_COLUMN_NAME                          = "id";
     static final String NAME_COLUMN_NAME                        = "name";
 
-    private static final String TABLE_NUMBER_COLUMN_NAME        = "table_numbers";
+    private static final String TABLE_NUMBER_COLUMN_NAME        = "table_number";
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = ID_COLUMN_NAME)

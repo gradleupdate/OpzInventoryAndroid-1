@@ -1,4 +1,4 @@
-package com.opz.oasu.inventory.ui.main.fragment.view;
+package com.opz.oasu.inventory.ui.details.fragment.view;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,19 +7,19 @@ import android.view.ViewGroup;
 
 import com.opz.oasu.inventory.R;
 import com.opz.oasu.inventory.ui.common.view.fragment.BaseViewFragment;
-import com.opz.oasu.inventory.ui.main.fragment.presenter.MainPresenter;
+import com.opz.oasu.inventory.ui.details.fragment.presenter.DetailsPresenter;
 
 import javax.annotation.Nullable;
 
 
-public class MainFragment extends BaseViewFragment<MainPresenter> implements MainView {
+public class DetailsFragment extends BaseViewFragment<DetailsPresenter> implements DetailsView {
 
     @Override
     public View onCreateView(
             LayoutInflater layoutInflater,
             @Nullable ViewGroup container,
             Bundle savedInstanceState) {
-        return layoutInflater.inflate(R.layout.fragment_main, container, false);
+        return layoutInflater.inflate(R.layout.fragment_details, container, false);
     }
 
     @Override

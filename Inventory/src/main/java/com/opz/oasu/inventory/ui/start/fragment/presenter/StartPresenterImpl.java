@@ -43,7 +43,7 @@ public final class StartPresenterImpl extends BasePresenter<StartView> implement
 
         final Calendar currentCalendar = Calendar.getInstance();
         final SimpleDateFormat dateFormat = new SimpleDateFormat(
-                "yyyy-MM-dd_HH_mm_ss_SSS",
+                "yyyy-MM-dd'T'HH-mm-ss-SSSZ",
                 Locale.getDefault());
 
         final String dbName = dateFormat.format(currentCalendar.getTime()) + ".sqlite3";
