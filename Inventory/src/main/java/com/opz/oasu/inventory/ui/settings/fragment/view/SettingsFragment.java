@@ -16,7 +16,11 @@ import com.opz.oasu.inventory.R;
 import com.opz.oasu.inventory.IntentRequestCodes;
 import com.opz.oasu.inventory.ui.settings.fragment.presenter.SettingsPresenter;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import javax.inject.Inject;
 
@@ -36,6 +40,7 @@ public class SettingsFragment extends PreferenceFragment implements SettingsView
 
     private String showColumnsName;
     private Preference showColumnsPreference;
+    private String[] showColumnsNames;
 
     private String sourceFile;
     private Preference sourceFilePreference;
@@ -63,6 +68,7 @@ public class SettingsFragment extends PreferenceFragment implements SettingsView
         });
 
         this.showColumnsName = resources.getString(R.string.pref_key_table_columns);
+        this.showColumnsNames = resources.getStringArray(R.array.pref_content_column_headers);
         this.showColumnsPreference = findPreference(showColumnsName);
         setShowColumnsPreferenceSummary(sharedPreferences);
 
@@ -80,7 +86,6 @@ public class SettingsFragment extends PreferenceFragment implements SettingsView
         };
         PreferenceManager.getDefaultSharedPreferences(getActivity())
                 .registerOnSharedPreferenceChangeListener(onSharedPreferenceChangeListener);
-        // TODO: get column names not indexes
 
         /*
         this.sourceFile = resources.getString(R.string.pref_source_file_key);
@@ -153,7 +158,6 @@ public class SettingsFragment extends PreferenceFragment implements SettingsView
     */
 
     private void setInventoryNamePreferenceSummary(SharedPreferences sharedPreferences) {
-        //Log.i(SettingsFragment.class.getName(), "Running setInventoryNamePreferenceSummary");
         String inventoryNamePreferenceSummary =
                 sharedPreferences.getString(inventoryName, null);
         if (inventoryNamePreferenceSummary == null)
@@ -162,12 +166,27 @@ public class SettingsFragment extends PreferenceFragment implements SettingsView
     }
 
     private void setShowColumnsPreferenceSummary(SharedPreferences sharedPreferences) {
-        String showColumnsPreferenceSummary =
+        StringBuilder showColumnsPreferenceSummary = new StringBuilder();
+
+        Set<String> showColumnsStringIndices =
                 sharedPreferences.getStringSet(
                         showColumnsName,
-                        new HashSet<String>()).toString();
-        if (showColumnsPreferenceSummary == null)
-            showColumnsPreferenceSummary = resources.getString(R.string.pref_show_columns_not_set);
-        showColumnsPreference.setSummary(showColumnsPreferenceSummary);
+                        new HashSet<String>());
+        if (showColumnsStringIndices.size() > 0) {
+            List<Integer> showColumnsIntegerIndices = new ArrayList<>();
+            for (String stringIndex : showColumnsStringIndices)
+                showColumnsIntegerIndices.add(Integer.parseInt(stringIndex));
+            Collections.sort(showColumnsIntegerIndices);
+            String firstColumnName = showColumnsNames[showColumnsIntegerIndices.get(0) - 1];
+            showColumnsPreferenceSummary.append(firstColumnName);
+            if (showColumnsIntegerIndices.size() > 1)
+                for (int i = 1; i < showColumnsIntegerIndices.size(); i++) {
+                    showColumnsPreferenceSummary.append(", ");
+                    showColumnsPreferenceSummary.append(
+                            showColumnsNames[showColumnsIntegerIndices.get(i) - 1]);
+                }
+        } else
+            showColumnsPreferenceSummary.append(resources.getString(R.string.pref_show_columns_not_set));
+        showColumnsPreference.setSummary(showColumnsPreferenceSummary.toString());
     }
 }
