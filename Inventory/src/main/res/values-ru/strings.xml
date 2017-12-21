@@ -42,4 +42,5 @@
     <string name="const_content_column_header_name_responsible_person_table_number">Табельный номер ответственного</string>
     <string name="const_content_column_header_name_location">Расположение</string>
     <string name="pref_show_columns_not_set">Show columns not set.</string>
+    <string name="textview_fragment_details_objects_position_by_order">№ объекта п/п</string>
 </resources>

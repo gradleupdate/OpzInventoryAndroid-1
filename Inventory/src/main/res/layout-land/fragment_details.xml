@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fragment_details_root_layout"
     android:layout_height="match_parent"
     android:layout_width="match_parent">
@@ -18,35 +17,29 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         app:layout_constraintEnd_toStartOf="@+id/fragment_details_guideline"
-        app:layout_constraintStart_toStartOf="@id/fragment_details_root_layout">
+        app:layout_constraintStart_toStartOf="@id/fragment_details_root_layout"
+        android:background="@android:color/background_dark">
 
-        <TableLayout
+        <ScrollView
+            android:id="@+id/fragment_details_content_header_cells_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:fillViewport="false">
 
-            <TableRow
-                android:id="@+id/fragment_details_content_header"
+            <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <ScrollView
-                    android:id="@+id/fragment_details_content_header_cells_container"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </TableRow>
 
-            <ScrollView
-                android:id="@+id/fragment_details_content_data"
-                android:layout_height="match_parent"
-                android:layout_width="match_parent">
+                <HorizontalScrollView>
+                    <TableRow
+                        android:id="@+id/fragment_details_content_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </HorizontalScrollView>
 
-                <TableLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+            </TableLayout>
+        </ScrollView>
 
-                </TableLayout>
-
-            </ScrollView>
-        </TableLayout>
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout

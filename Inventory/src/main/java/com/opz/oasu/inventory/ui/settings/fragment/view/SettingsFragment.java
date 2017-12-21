@@ -2,7 +2,6 @@ package com.opz.oasu.inventory.ui.settings.fragment.view;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Build;
@@ -13,7 +12,6 @@ import android.preference.PreferenceManager;
 import android.widget.Toast;
 
 import com.opz.oasu.inventory.R;
-import com.opz.oasu.inventory.IntentRequestCodes;
 import com.opz.oasu.inventory.ui.settings.fragment.presenter.SettingsPresenter;
 
 import java.util.ArrayList;
@@ -26,8 +24,6 @@ import javax.inject.Inject;
 
 import dagger.android.AndroidInjection;
 
-import static com.opz.oasu.inventory.IntentRequestCodes.SOURCE_SPREADSHEET_FILE_SELECT_REQUEST_CODE;
-
 public class SettingsFragment extends PreferenceFragment implements SettingsView {
 
     @Inject
@@ -35,10 +31,10 @@ public class SettingsFragment extends PreferenceFragment implements SettingsView
 
     private Resources resources;
 
-    private String inventoryName;
+    private String inventoryNameKey;
     private Preference inventoryNamePreference;
 
-    private String showColumnsName;
+    private String showColumnsKey;
     private Preference showColumnsPreference;
     private String[] showColumnsNames;
 
@@ -54,8 +50,8 @@ public class SettingsFragment extends PreferenceFragment implements SettingsView
         final SharedPreferences sharedPreferences =
                 PreferenceManager.getDefaultSharedPreferences(getActivity());
 
-        this.inventoryName = resources.getString(R.string.pref_key_current_inventory_db);
-        this.inventoryNamePreference = findPreference(inventoryName);
+        this.inventoryNameKey = resources.getString(R.string.pref_key_current_inventory_db);
+        this.inventoryNamePreference = findPreference(inventoryNameKey);
         setInventoryNamePreferenceSummary(sharedPreferences);
         inventoryNamePreference.setOnPreferenceClickListener(
                 new Preference.OnPreferenceClickListener() {
@@ -67,19 +63,19 @@ public class SettingsFragment extends PreferenceFragment implements SettingsView
             }
         });
 
-        this.showColumnsName = resources.getString(R.string.pref_key_table_columns);
+        this.showColumnsKey = resources.getString(R.string.pref_key_table_columns);
         this.showColumnsNames = resources.getStringArray(R.array.pref_content_column_headers);
-        this.showColumnsPreference = findPreference(showColumnsName);
+        this.showColumnsPreference = findPreference(showColumnsKey);
         setShowColumnsPreferenceSummary(sharedPreferences);
 
         SharedPreferences.OnSharedPreferenceChangeListener onSharedPreferenceChangeListener =
                 new SharedPreferences.OnSharedPreferenceChangeListener() {
             @Override
             public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-                if (key.equals(inventoryName)) {
+                if (key.equals(inventoryNameKey)) {
                     setInventoryNamePreferenceSummary(sharedPreferences);
                 }
-                if (key.equals(showColumnsName)) {
+                if (key.equals(showColumnsKey)) {
                     setShowColumnsPreferenceSummary(sharedPreferences);
                 }
             }
@@ -159,7 +155,7 @@ public class SettingsFragment extends PreferenceFragment implements SettingsView
 
     private void setInventoryNamePreferenceSummary(SharedPreferences sharedPreferences) {
         String inventoryNamePreferenceSummary =
-                sharedPreferences.getString(inventoryName, null);
+                sharedPreferences.getString(inventoryNameKey, null);
         if (inventoryNamePreferenceSummary == null)
             inventoryNamePreferenceSummary = resources.getString(R.string.pref_current_inventory_not_set);
         inventoryNamePreference.setSummary(inventoryNamePreferenceSummary);
@@ -170,7 +166,7 @@ public class SettingsFragment extends PreferenceFragment implements SettingsView
 
         Set<String> showColumnsStringIndices =
                 sharedPreferences.getStringSet(
-                        showColumnsName,
+                        showColumnsKey,
                         new HashSet<String>());
         if (showColumnsStringIndices.size() > 0) {
             List<Integer> showColumnsIntegerIndices = new ArrayList<>();
