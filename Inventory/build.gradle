@@ -28,12 +28,13 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
-    def final daggerVersion = '2.11'
+    def final daggerVersion = '2.14.1'
     def final butterKnifeVersion = '8.8.1'
     def final lifecycleVersion = '1.0.0'
     def final roomVersion = '1.0.0'
     def final poiVersion = '3.17'
-    def final zxingVersion = '3.3.0'
+    //def final zxingVersion = '3.3.0'
+    def final googlePlayServicesVersion = '11.8.0'
 
     annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
     annotationProcessor "com.google.dagger:dagger-android-processor:$daggerVersion"
@@ -49,8 +50,10 @@ dependencies {
 
     implementation "org.apache.poi:poi:$poiVersion"
     implementation "org.apache.poi:poi-ooxml:$poiVersion"
-
+    /*
     implementation "com.google.zxing:core:$zxingVersion"
     implementation "com.google.zxing:android-core:$zxingVersion"
     implementation "com.google.zxing:android-integration:$zxingVersion"
+    */
+    implementation "com.google.android.gms:play-services-vision:$googlePlayServicesVersion"
 }
