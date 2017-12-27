@@ -9,7 +9,6 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ScrollView;
 import android.widget.TableRow;
 import android.widget.TextView;
 
@@ -43,12 +42,27 @@ public class DetailsFragment extends BaseViewFragment<DetailsPresenter> implemen
     public void onViewStateRestored(Bundle savedInstanceState) {
         super.onViewStateRestored(savedInstanceState);
 
+        //TODO: realize not-hardcoded table text appearance
+
         setTableHeader();
+
+        //TODO: realize different table rows colors
+
+        //TODO: realize controls views and listeners
+
+        //TODO: realize adding inventory entities to db and storing it
+
+        //TODO: realize sorting entities by tapping on table header column
 
         presenter.onFragmentStart();
     }
 
     private void setTableHeader() {
+
+        //TODO: realize different table headers colors
+
+        //TODO: realize constant table header - maybe it will be overlay over main table view
+
         Resources resources = getResources();
         String[] columnNames = resources.getStringArray(R.array.pref_content_column_headers);
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
