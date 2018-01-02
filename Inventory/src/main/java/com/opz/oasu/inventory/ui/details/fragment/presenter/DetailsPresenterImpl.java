@@ -26,4 +26,9 @@ public final class DetailsPresenterImpl extends BasePresenter<DetailsView> imple
     public void onFragmentStart() {
 
     }
+
+    @Override
+    public void addInventoryData() {
+
+    }
 }

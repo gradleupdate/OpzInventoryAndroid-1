@@ -6,6 +6,7 @@ import javax.inject.Named;
 
 import dagger.Binds;
 import dagger.Module;
+
 import com.opz.oasu.inventory.di.FragmentScope;
 import com.opz.oasu.inventory.ui.common.view.fragment.BaseFragmentModule;
 import com.opz.oasu.inventory.ui.start.fragment.presenter.StartPresenterModule;
@@ -24,4 +25,8 @@ public abstract class StartFragmentModule {
     @Binds
     @FragmentScope
     abstract StartView startView(StartFragment startFragment);
+
+    @Binds
+    @FragmentScope
+    abstract StartFragmentActionListener startFragmentActionListener(StartFragment startFragment);
 }

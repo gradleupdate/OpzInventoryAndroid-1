@@ -12,7 +12,6 @@ import com.opz.oasu.inventory.ui.common.BaseActivityModule;
 import com.opz.oasu.inventory.ui.details.fragment.view.DetailsFragment;
 import com.opz.oasu.inventory.ui.details.fragment.view.DetailsFragmentModule;
 import com.opz.oasu.inventory.ui.start.fragment.view.StartFragment;
-import com.opz.oasu.inventory.ui.start.fragment.view.StartFragmentActionListener;
 import com.opz.oasu.inventory.ui.start.fragment.view.StartFragmentModule;
 
 
@@ -31,7 +30,4 @@ public abstract class StartActivityModule {
     @ActivityScope
     abstract Activity activity(StartActivity startActivity);
 
-    @Binds
-    @ActivityScope
-    abstract StartFragmentActionListener startFragmentActionListener(StartActivity startActivity);
 }

@@ -10,7 +10,6 @@ import com.opz.oasu.inventory.R;
 import com.opz.oasu.inventory.navigation.Navigator;
 import com.opz.oasu.inventory.ui.common.BaseActivity;
 import com.opz.oasu.inventory.ui.start.fragment.view.StartFragment;
-import com.opz.oasu.inventory.ui.start.fragment.view.StartFragmentActionListener;
 
 import javax.inject.Inject;
 
@@ -18,7 +17,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public final class StartActivity extends BaseActivity implements StartFragmentActionListener {
+public final class StartActivity extends BaseActivity {
 
     @Inject
     Navigator navigator;

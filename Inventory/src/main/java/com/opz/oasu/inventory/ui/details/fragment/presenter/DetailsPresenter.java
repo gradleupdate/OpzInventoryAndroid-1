@@ -4,5 +4,8 @@ import com.opz.oasu.inventory.ui.common.view.fragment.presenter.Presenter;
 
 
 public interface DetailsPresenter extends Presenter {
+
     void onFragmentStart();
+
+    void addInventoryData();
 }

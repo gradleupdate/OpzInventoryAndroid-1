@@ -17,7 +17,7 @@ import javax.inject.Inject;
 import butterknife.OnClick;
 
 
-public class StartFragment extends BaseViewFragment<StartPresenter> implements StartView {
+public class StartFragment extends BaseViewFragment<StartPresenter> implements StartView, StartFragmentActionListener {
 
     @Inject
     StartFragmentActionListener listener;
@@ -31,7 +31,7 @@ public class StartFragment extends BaseViewFragment<StartPresenter> implements S
     }
 
     @OnClick(R.id.fragment_start_button_start_new_inventory)
-    void onStartNewInventoryButtonClick() {
+    public void onStartNewInventoryButtonClick() {
         presenter.createNewInventory();
 
         FragmentTransaction fragmentTransaction = getActivity().getFragmentManager().beginTransaction();

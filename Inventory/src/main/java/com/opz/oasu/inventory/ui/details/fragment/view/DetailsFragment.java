@@ -9,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TableRow;
 import android.widget.TextView;
 
@@ -23,12 +24,16 @@ import java.util.List;
 import java.util.Set;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 
-public class DetailsFragment extends BaseViewFragment<DetailsPresenter> implements DetailsView {
+public class DetailsFragment extends BaseViewFragment<DetailsPresenter> implements DetailsView, DetailsFragmentActionListener {
 
     @BindView(R.id.fragment_details_content_header)
     TableRow headerCellsContainer;
+
+    @BindView(R.id.fragment_details_button_add_inventory_data)
+    Button addInventoryDataButton;
 
     @Override
     public View onCreateView(
@@ -55,6 +60,12 @@ public class DetailsFragment extends BaseViewFragment<DetailsPresenter> implemen
         //TODO: realize sorting entities by tapping on table header column
 
         presenter.onFragmentStart();
+    }
+
+    @Override
+    @OnClick(R.id.fragment_details_button_add_inventory_data)
+    public void onAddInventoryDataButtonClick() {
+        presenter.addInventoryData();
     }
 
     private void setTableHeader() {
@@ -94,4 +105,5 @@ public class DetailsFragment extends BaseViewFragment<DetailsPresenter> implemen
         }
 
     }
+
 }
