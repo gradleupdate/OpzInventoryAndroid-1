@@ -59,4 +59,6 @@
     <string name="const_content_column_header_name_location">Location</string>
     <string name="pref_show_columns_not_set">Show columns not set.</string>
     <string name="textview_fragment_details_objects_position_by_order">Object\'s position by order</string>
+    <string name="button_fragment_details_import_inventory_data">Import\ninventory\ndata</string>
+    <string name="button_fragment_details_close_current_inventory">Close\ncurrent\ninventory</string>
 </resources>

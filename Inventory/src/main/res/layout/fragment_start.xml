@@ -13,7 +13,7 @@
         app:layout_constraintGuide_percent="0.5" />
 
     <Button
-        android:id="@+id/fragment_start_start_new_inventory_button"
+        android:id="@+id/fragment_start_button_start_new_inventory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_fragment_start_new_inventory"
@@ -22,7 +22,7 @@
         app:layout_constraintEnd_toEndOf="@id/fragment_start_root_layout" />
 
     <Button
-        android:id="@+id/fragment_start_view_inventory_history"
+        android:id="@+id/fragment_start_button_view_inventory_history"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_fragment_start_view_inventory_history"

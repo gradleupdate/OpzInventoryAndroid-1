@@ -6,7 +6,7 @@
     android:layout_width="match_parent">
 
     <android.support.constraint.Guideline
-        android:id="@+id/fragment_details_guideline"
+        android:id="@+id/fragment_details_guideline_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -15,10 +15,12 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/fragment_details_content_layout"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
-        app:layout_constraintEnd_toStartOf="@+id/fragment_details_guideline"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toStartOf="@+id/fragment_details_guideline_main"
         app:layout_constraintStart_toStartOf="@id/fragment_details_root_layout"
-        android:background="@android:color/background_dark">
+        app:layout_constraintTop_toTopOf="@id/fragment_details_root_layout"
+        app:layout_constraintBottom_toBottomOf="@id/fragment_details_root_layout"
+        android:background="@android:color/darker_gray">
 
         <ScrollView
             android:id="@+id/fragment_details_content_header_cells_container"
@@ -48,8 +50,37 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/fragment_details_controls_layout"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
-        app:layout_constraintStart_toEndOf="@id/fragment_details_guideline"
-        app:layout_constraintEnd_toEndOf="@id/fragment_details_root_layout" />
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="@id/fragment_details_root_layout"
+        app:layout_constraintStart_toEndOf="@id/fragment_details_guideline_main"
+        app:layout_constraintTop_toTopOf="@id/fragment_details_root_layout"
+        app:layout_constraintBottom_toBottomOf="@id/fragment_details_root_layout">
+
+        <android.support.constraint.Guideline
+            android:id="@+id/fragment_details_guideline_main_controls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <Button
+            android:id="@+id/fragment_details_button_add_inventory_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_fragment_details_import_inventory_data"
+            app:layout_constraintBottom_toTopOf="@+id/fragment_details_guideline_main_controls"
+            app:layout_constraintEnd_toEndOf="@id/fragment_details_controls_layout"
+            app:layout_constraintStart_toStartOf="@id/fragment_details_controls_layout" />
+
+        <Button
+            android:id="@+id/fragment_details_button_close_current_inventory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_fragment_details_close_current_inventory"
+            app:layout_constraintEnd_toEndOf="@id/fragment_details_controls_layout"
+            app:layout_constraintStart_toStartOf="@id/fragment_details_controls_layout"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_details_guideline_main_controls" />
+
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>
