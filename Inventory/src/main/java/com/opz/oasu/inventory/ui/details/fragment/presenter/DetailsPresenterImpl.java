@@ -2,6 +2,7 @@ package com.opz.oasu.inventory.ui.details.fragment.presenter;
 
 import android.content.Context;
 
+import com.opz.oasu.inventory.service.WbSvc;
 import com.opz.oasu.inventory.ui.common.view.fragment.presenter.BasePresenter;
 import com.opz.oasu.inventory.ui.details.fragment.view.DetailsView;
 
@@ -14,12 +15,16 @@ public final class DetailsPresenterImpl extends BasePresenter<DetailsView> imple
 
     private final Context context;
 
+    private final WbSvc wbSvc;
+
     @Inject
     DetailsPresenterImpl(
             DetailsView view,
-            Context context) {
+            Context context,
+            WbSvc wbSvc) {
         super(view);
         this.context = context;
+        this.wbSvc = wbSvc;
     }
 
     @Override
@@ -29,6 +34,12 @@ public final class DetailsPresenterImpl extends BasePresenter<DetailsView> imple
 
     @Override
     public void addInventoryData() {
+        // TODO: add open file dialog from settings activity code
 
+        // TODO: read data from provided file
+
+        // TODO: solve issue with Room index on entities link
+
+        // TODO: save data to local DB
     }
 }

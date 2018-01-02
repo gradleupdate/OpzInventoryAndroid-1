@@ -13,6 +13,7 @@ import java.util.Objects;
 import static com.opz.oasu.inventory.model.entity.Nomenclature.BARCODE_COLUMN_NAME;
 import static com.opz.oasu.inventory.model.entity.Nomenclature.DESCRIPTION_COLUMN_NAME;
 import static com.opz.oasu.inventory.model.entity.Nomenclature.ID_COLUMN_NAME;
+import static com.opz.oasu.inventory.model.entity.Nomenclature.RESPONSIBLE_PERSON_ID_COLUMN_NAME;
 
 
 @Entity(foreignKeys = @ForeignKey(
@@ -21,12 +22,14 @@ import static com.opz.oasu.inventory.model.entity.Nomenclature.ID_COLUMN_NAME;
                 childColumns = "responsible_person_id"),
         indices = {
                 @Index(value = {ID_COLUMN_NAME, BARCODE_COLUMN_NAME}),
-                @Index(value = DESCRIPTION_COLUMN_NAME)})
+                @Index(value = DESCRIPTION_COLUMN_NAME),
+                @Index(value = RESPONSIBLE_PERSON_ID_COLUMN_NAME)})
 public class Nomenclature {
 
     static final String ID_COLUMN_NAME                              = "id";
     static final String BARCODE_COLUMN_NAME                         = "barcode";
     static final String DESCRIPTION_COLUMN_NAME                     = "description";
+    static final String RESPONSIBLE_PERSON_ID_COLUMN_NAME           = "responsible_person_id";
 
     private static final String SAP_NUMBER_COLUMN_NAME              = "sap_number";
     private static final String INVENTORY_CLASS_COLUMN_NAME         = "inventory_class";
@@ -43,7 +46,6 @@ public class Nomenclature {
     private static final String TYPE_LABEL_COLUMN_NAME              = "type_label";
     private static final String INITIAL_COST_COLUMN_NAME            = "initial_cost";
     private static final String LEAST_COST_COLUMN_NAME              = "least_cost";
-    private static final String RESPONSIBLE_PERSON_ID_COLUMN_NAME   = "responsible_person_id";
     private static final String LOCATION_COLUMN_NAME                = "location";
 
     @PrimaryKey(autoGenerate = true)

@@ -12,9 +12,9 @@ import static com.opz.oasu.inventory.model.entity.ResponsiblePerson.NAME_COLUMN_
 import static com.opz.oasu.inventory.model.entity.ResponsiblePerson.RESPONSIBLE_PERSON_TABLE_NAME;
 
 
-@Entity(tableName = RESPONSIBLE_PERSON_TABLE_NAME, indices = {
-                @Index(value = ID_COLUMN_NAME),
-                @Index(value = NAME_COLUMN_NAME)})
+@Entity(tableName = RESPONSIBLE_PERSON_TABLE_NAME,
+        indices = {
+                @Index(value = {ID_COLUMN_NAME, NAME_COLUMN_NAME})})
 public class ResponsiblePerson {
 
     public static final String RESPONSIBLE_PERSON_TABLE_NAME    = "responsible_person";

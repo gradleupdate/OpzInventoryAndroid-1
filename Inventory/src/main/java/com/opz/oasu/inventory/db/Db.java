@@ -10,7 +10,7 @@ import com.opz.oasu.inventory.model.entity.Nomenclature;
 import com.opz.oasu.inventory.model.entity.ResponsiblePerson;
 
 
-@Database(entities = {Nomenclature.class, ResponsiblePerson.class}, version = 1)
+@Database(entities = {Nomenclature.class, ResponsiblePerson.class}, version = 1, exportSchema = false)
 @TypeConverters({DateConverter.class, BooleanConverter.class, BigDecimalConverter.class})
 public abstract class Db extends RoomDatabase {
     public abstract NomenclatureDao nomenclatureDao();
