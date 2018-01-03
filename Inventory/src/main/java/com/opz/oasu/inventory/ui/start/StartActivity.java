@@ -1,7 +1,9 @@
 package com.opz.oasu.inventory.ui.start;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toolbar;
@@ -54,5 +56,11 @@ public final class StartActivity extends BaseActivity {
             }
         }
         return super.onOptionsItemSelected(menuItem);
+    }
+
+    @Override
+    public void onActivityResult(int reqCode, int resCode, Intent data) {
+        super.onActivityResult(reqCode, resCode, data);
+        Log.d("Activity", "reqCode = " + reqCode + ", resCode = " + resCode + ", data = " + data.getData());
     }
 }

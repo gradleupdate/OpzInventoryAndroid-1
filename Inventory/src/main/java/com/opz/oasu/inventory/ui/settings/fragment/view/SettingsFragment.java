@@ -82,36 +82,6 @@ public class SettingsFragment extends PreferenceFragment implements SettingsView
         };
         PreferenceManager.getDefaultSharedPreferences(getActivity())
                 .registerOnSharedPreferenceChangeListener(onSharedPreferenceChangeListener);
-
-        /*
-        this.sourceFile = resources.getString(R.string.pref_source_file_key);
-        this.sourceFilePreference = findPreference(sourceFile);
-
-        sourceFilePreference.setSummary(
-                PreferenceManager.getDefaultSharedPreferences(
-                        getActivity())
-                .getString(sourceFile, sourceFile));
-        /*
-        sourceFilePreference.setOnPreferenceClickListener(
-                new Preference.OnPreferenceClickListener() {
-
-                    @Override
-                    public boolean onPreferenceClick(Preference preference) {
-                        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
-                        intent.addCategory(Intent.CATEGORY_OPENABLE);
-                        intent.setType(resources.getString(R.string.pref_source_file_root_mime_type));
-                        intent.putExtra(
-                                Intent.EXTRA_MIME_TYPES,
-                                resources.getStringArray(R.array.pref_source_file_mime_types));
-                        startActivityForResult(
-                                Intent.createChooser(
-                                        intent,
-                                        resources.getString(R.string.pref_source_file_chooser_title)),
-                                SOURCE_SPREADSHEET_FILE_SELECT_REQUEST_CODE.ordinal());
-                        return true;
-                    }
-                });
-                */
     }
 
     @Override
@@ -138,20 +108,6 @@ public class SettingsFragment extends PreferenceFragment implements SettingsView
         }
         super.onAttach(context);
     }
-    /*
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent resultData) {
-        super.onActivityResult(requestCode, resultCode, resultData);
-        if (resultData != null)
-            settingsPresenter.processActivityResult(
-                    IntentRequestCodes.values()[requestCode],
-                    resultCode,
-                    resultData);
-        this.sourceFilePreference.setSummary(
-                PreferenceManager.getDefaultSharedPreferences(getActivity())
-                        .getString(sourceFile, sourceFile));
-    }
-    */
 
     private void setInventoryNamePreferenceSummary(SharedPreferences sharedPreferences) {
         String inventoryNamePreferenceSummary =

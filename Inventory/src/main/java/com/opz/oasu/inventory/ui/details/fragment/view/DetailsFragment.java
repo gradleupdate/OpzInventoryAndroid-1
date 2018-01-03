@@ -1,5 +1,6 @@
 package com.opz.oasu.inventory.ui.details.fragment.view;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Color;
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import com.opz.oasu.inventory.IntentRequestCodes;
 import com.opz.oasu.inventory.R;
 import com.opz.oasu.inventory.ui.common.view.fragment.BaseViewFragment;
 import com.opz.oasu.inventory.ui.details.fragment.presenter.DetailsPresenter;
@@ -25,6 +27,8 @@ import java.util.Set;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+
+import static com.opz.oasu.inventory.IntentRequestCodes.SOURCE_SPREADSHEET_FILE_SELECT_REQUEST_CODE;
 
 
 public class DetailsFragment extends BaseViewFragment<DetailsPresenter> implements DetailsView, DetailsFragmentActionListener {
@@ -53,10 +57,6 @@ public class DetailsFragment extends BaseViewFragment<DetailsPresenter> implemen
 
         //TODO: realize different table rows colors
 
-        //TODO: realize controls views and listeners
-
-        //TODO: realize adding inventory entities to db and storing it
-
         //TODO: realize sorting entities by tapping on table header column
 
         presenter.onFragmentStart();
@@ -65,7 +65,29 @@ public class DetailsFragment extends BaseViewFragment<DetailsPresenter> implemen
     @Override
     @OnClick(R.id.fragment_details_button_add_inventory_data)
     public void onAddInventoryDataButtonClick() {
-        presenter.addInventoryData();
+        Intent sourceSpreadsheetChooserActivityIntent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        sourceSpreadsheetChooserActivityIntent.addCategory(Intent.CATEGORY_OPENABLE);
+        Resources resources = getResources();
+        sourceSpreadsheetChooserActivityIntent.setType(
+                resources.getString(R.string.pref_source_file_root_mime_type));
+        sourceSpreadsheetChooserActivityIntent.putExtra(
+                Intent.EXTRA_MIME_TYPES,
+                resources.getStringArray(R.array.pref_source_file_mime_types));
+        startActivityForResult(
+                Intent.createChooser(
+                        sourceSpreadsheetChooserActivityIntent,
+                        resources.getString(R.string.pref_source_file_chooser_title)),
+                SOURCE_SPREADSHEET_FILE_SELECT_REQUEST_CODE.ordinal());
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent resultData) {
+        super.onActivityResult(requestCode, resultCode, resultData);
+        if (resultData != null)
+            presenter.processActivityResult(
+                    IntentRequestCodes.values()[requestCode],
+                    resultCode,
+                    resultData);
     }
 
     private void setTableHeader() {
