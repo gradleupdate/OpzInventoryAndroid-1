@@ -11,5 +11,5 @@ public abstract class DetailsPresenterModule {
 
     @Binds
     @FragmentScope
-    abstract DetailsPresenter mainPresenter(DetailsPresenterImpl mainPresenterImpl);
+    abstract DetailsPresenter detailsPresenter(DetailsPresenterImpl detailsPresenterImpl);
 }

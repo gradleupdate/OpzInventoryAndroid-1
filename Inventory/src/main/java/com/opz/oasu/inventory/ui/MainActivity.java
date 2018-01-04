@@ -1,9 +1,7 @@
-package com.opz.oasu.inventory.ui.start;
+package com.opz.oasu.inventory.ui;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toolbar;
@@ -19,7 +17,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public final class StartActivity extends BaseActivity {
+public final class MainActivity extends BaseActivity {
 
     @Inject
     Navigator navigator;
@@ -51,16 +49,10 @@ public final class StartActivity extends BaseActivity {
         int id = menuItem.getItemId();
         switch (id) {
             case R.id.main_menu_navigation_group_settings: {
-                navigator.startSettingsActivity(StartActivity.this);
+                navigator.startSettingsActivity(MainActivity.this);
                 break;
             }
         }
         return super.onOptionsItemSelected(menuItem);
-    }
-
-    @Override
-    public void onActivityResult(int reqCode, int resCode, Intent data) {
-        super.onActivityResult(reqCode, resCode, data);
-        Log.d("Activity", "reqCode = " + reqCode + ", resCode = " + resCode + ", data = " + data.getData());
     }
 }

@@ -30,6 +30,7 @@ public class StartFragment extends BaseViewFragment<StartPresenter> implements S
         return layoutInflater.inflate(R.layout.fragment_start, container, false);
     }
 
+    @Override
     @OnClick(R.id.fragment_start_button_start_new_inventory)
     public void onStartNewInventoryButtonClick() {
         presenter.createNewInventory();

@@ -11,8 +11,8 @@ import dagger.android.ContributesAndroidInjector;
 import com.opz.oasu.inventory.di.ActivityScope;
 import com.opz.oasu.inventory.ui.settings.SettingsActivity;
 import com.opz.oasu.inventory.ui.settings.SettingsActivityModule;
-import com.opz.oasu.inventory.ui.start.StartActivity;
-import com.opz.oasu.inventory.ui.start.StartActivityModule;
+import com.opz.oasu.inventory.ui.MainActivity;
+import com.opz.oasu.inventory.ui.MainActivityModule;
 
 @Module(includes = AndroidInjectionModule.class)
 abstract class InventoryAppModule {
@@ -22,8 +22,8 @@ abstract class InventoryAppModule {
     abstract Application application(InventoryApp inventoryApp);
 
     @ActivityScope
-    @ContributesAndroidInjector(modules = StartActivityModule.class)
-    abstract StartActivity startActivityInjector();
+    @ContributesAndroidInjector(modules = MainActivityModule.class)
+    abstract MainActivity mainActivityInjector();
 
     @ActivityScope
     @ContributesAndroidInjector(modules = SettingsActivityModule.class)

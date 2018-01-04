@@ -1,4 +1,4 @@
-package com.opz.oasu.inventory.ui.start;
+package com.opz.oasu.inventory.ui;
 
 import android.app.Activity;
 
@@ -16,7 +16,7 @@ import com.opz.oasu.inventory.ui.start.fragment.view.StartFragmentModule;
 
 
 @Module(includes = BaseActivityModule.class)
-public abstract class StartActivityModule {
+public abstract class MainActivityModule {
 
     @FragmentScope
     @ContributesAndroidInjector(modules = StartFragmentModule.class)
@@ -24,10 +24,10 @@ public abstract class StartActivityModule {
 
     @FragmentScope
     @ContributesAndroidInjector(modules = DetailsFragmentModule.class)
-    abstract DetailsFragment mainFragmentInjector();
+    abstract DetailsFragment detailsFragmentInjector();
 
     @Binds
     @ActivityScope
-    abstract Activity activity(StartActivity startActivity);
+    abstract Activity activity(MainActivity mainActivity);
 
 }

@@ -24,5 +24,5 @@ public abstract class DetailsFragmentModule {
 
     @Binds
     @FragmentScope
-    abstract DetailsView mainView(DetailsFragment mainFragment);
+    abstract DetailsView detailsView(DetailsFragment mainFragment);
 }

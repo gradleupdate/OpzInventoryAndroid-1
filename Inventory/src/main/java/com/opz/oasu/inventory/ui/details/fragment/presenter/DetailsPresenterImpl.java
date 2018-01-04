@@ -10,11 +10,13 @@ import android.util.Log;
 
 import com.opz.oasu.inventory.IntentRequestCodes;
 import com.opz.oasu.inventory.R;
+import com.opz.oasu.inventory.model.entity.Nomenclature;
 import com.opz.oasu.inventory.service.WbSvc;
 import com.opz.oasu.inventory.ui.common.view.fragment.presenter.BasePresenter;
 import com.opz.oasu.inventory.ui.details.fragment.view.DetailsView;
 
 import java.io.File;
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -91,7 +93,8 @@ public final class DetailsPresenterImpl extends BasePresenter<DetailsView> imple
 
     private void addInventoryData(String filePath) {
         if (wbSvc.wbExists(filePath)) {
-            wbSvc.readWb(new File(filePath));
+            List<Nomenclature> nomenclatures = wbSvc.readWb(new File(filePath));
+            Log.d(LOGGER_TAG, nomenclatures.toString());
 
             // TODO: solve issue with Room index on entities link
 

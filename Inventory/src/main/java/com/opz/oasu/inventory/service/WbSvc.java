@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Environment;
 import android.preference.PreferenceManager;
-import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.opz.oasu.inventory.R;
@@ -61,7 +60,7 @@ public class WbSvc {
         return sourceFile.exists();
     }
 
-    public @Nullable List<Nomenclature> readWb(File wbFile) {
+    public List<Nomenclature> readWb(File wbFile) {
         Log.d(LOGGER_TAG, LOGGER_SOURCE_WORKBOOK_VALIDITY_CHECKING_START);
 
         String filePath = wbFile.getPath();
