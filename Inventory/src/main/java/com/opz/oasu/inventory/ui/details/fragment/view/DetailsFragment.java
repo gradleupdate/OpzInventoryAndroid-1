@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TableRow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.opz.oasu.inventory.IntentRequestCodes;
 import com.opz.oasu.inventory.R;
@@ -74,7 +73,7 @@ public class DetailsFragment extends BaseViewFragment<DetailsPresenter> implemen
         sourceSpreadsheetChooserActivityIntent.putExtra(
                 Intent.EXTRA_MIME_TYPES,
                 resources.getStringArray(R.array.pref_source_file_mime_types));
-        sourceSpreadsheetChooserActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        //sourceSpreadsheetChooserActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         Intent.createChooser(
                 sourceSpreadsheetChooserActivityIntent,
                 resources.getString(R.string.pref_source_file_chooser_title));

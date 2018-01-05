@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Environment;
 import android.util.Log;
 
 import com.opz.oasu.inventory.IntentRequestCodes;
@@ -55,13 +56,6 @@ public final class DetailsPresenterImpl extends BasePresenter<DetailsView> imple
 
     @Override
     public void processActivityResult(IntentRequestCodes requestCode, int resultCode, Intent resultData) {
-        Log.d(
-                LOGGER_TAG,
-                context.getResources().getString(
-                        R.string.logger_fragment_details_start_processing_source_workbook_selection,
-                        IntentRequestCodes.values()[requestCode.ordinal()],
-                        resultCode,
-                        resultData.toString()));
         switch (requestCode) {
             case SOURCE_SPREADSHEET_FILE_SELECT_REQUEST_CODE: {
                 switch (resultCode) {
@@ -92,8 +86,9 @@ public final class DetailsPresenterImpl extends BasePresenter<DetailsView> imple
     }
 
     private void addInventoryData(String filePath) {
-        if (wbSvc.wbExists(filePath)) {
-            List<Nomenclature> nomenclatures = wbSvc.readWb(new File(filePath));
+        final File wbFile = new File(Environment.getExternalStorageDirectory(), filePath);
+        if (wbSvc.wbExists(wbFile)) {
+            List<Nomenclature> nomenclatures = wbSvc.readWb(wbFile);
             Log.d(LOGGER_TAG, nomenclatures.toString());
 
             // TODO: solve issue with Room index on entities link

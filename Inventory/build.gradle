@@ -34,6 +34,7 @@ dependencies {
     def final lifecycleVersion = '1.0.0'
     def final roomVersion = '1.0.0'
     def final poiVersion = '3.17'
+    def final fasterXmlVersion = '1.0.0'
     //def final zxingVersion = '3.3.0'
     def final googlePlayServicesVersion = '11.8.0'
 
@@ -51,6 +52,7 @@ dependencies {
 
     implementation "org.apache.poi:poi:$poiVersion"
     implementation "org.apache.poi:poi-ooxml:$poiVersion"
+    implementation "com.fasterxml:aalto-xml:$fasterXmlVersion"
     /*
     implementation "com.google.zxing:core:$zxingVersion"
     implementation "com.google.zxing:android-core:$zxingVersion"
