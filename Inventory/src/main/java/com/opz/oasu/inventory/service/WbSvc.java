@@ -1,10 +1,14 @@
 package com.opz.oasu.inventory.service;
 
+import android.os.Handler;
 import android.app.Application;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.os.Looper;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import com.opz.oasu.inventory.R;
 import com.opz.oasu.inventory.model.entity.Nomenclature;
@@ -59,7 +63,7 @@ public class WbSvc {
         return wbFile.exists();
     }
 
-    public List<Nomenclature> readWb(File wbFile) {
+    public List<Nomenclature> readWb(File wbFile, ProgressBar progressBar) {
         Log.d(LOGGER_TAG, LOGGER_SOURCE_WORKBOOK_VALIDITY_CHECKING_START);
 
         final String filePath = wbFile.getPath();
@@ -68,11 +72,11 @@ public class WbSvc {
         try {
             switch (sourceFileExtension) {
                 case "xls": {
-                    readingResult = readXls(wbFile);
+                    readingResult = readXls(wbFile, progressBar);
                     break;
                 }
                 case "xlsx": {
-                    readingResult = readXlsx(wbFile);
+                    readingResult = readXlsx(wbFile, progressBar);
                     break;
                 }
                 default: {
@@ -86,28 +90,46 @@ public class WbSvc {
         return readingResult;
     }
 
-    private List<Nomenclature> readXls(File wbFile) throws IOException {
+    private List<Nomenclature> readXls(File wbFile, final ProgressBar progressBar) throws IOException {
         List<Nomenclature> readingResult = new ArrayList<>();
         HSSFWorkbook workbook = new HSSFWorkbook(new FileInputStream(wbFile));
         HSSFSheet mainSheet = workbook.getSheet(MAIN_SHEET_NAME);
+        Handler progressBarHandler = new Handler(Looper.getMainLooper());
         int lastRowNum = mainSheet.getLastRowNum();
+        progressBar.setMax(lastRowNum);
         for (int i = 1; i <= lastRowNum; i++) {
             HSSFRow row = mainSheet.getRow(i);
             logWbRow(row);
+            final int progressStatus = i;
+            progressBarHandler.post(new Runnable() {
+                @Override
+                public void run() {
+                    progressBar.setProgress(progressStatus);
+                }
+
+            });
         }
         workbook.close();
         return readingResult;
     }
 
-    private List<Nomenclature> readXlsx(File wbFile) throws IOException {
+    private List<Nomenclature> readXlsx(File wbFile, final ProgressBar progressBar) throws IOException {
         List<Nomenclature> readingResult = new ArrayList<>();
         XSSFWorkbook workbook = new XSSFWorkbook(new FileInputStream(wbFile));
         XSSFSheet mainSheet = workbook.getSheet(MAIN_SHEET_NAME);
+        Handler progressBarHandler = new Handler(Looper.getMainLooper());
         int lastRowNum = mainSheet.getLastRowNum();
-
+        progressBar.setMax(lastRowNum);
         for (int i = 1; i <= lastRowNum; i++) {
             XSSFRow row = mainSheet.getRow(i);
             logWbRow(row);
+            final int progressStatus = i;
+            progressBarHandler.post(new Runnable() {
+                @Override
+                public void run() {
+                    progressBar.setProgress(progressStatus);
+                }
+            });
         }
         workbook.close();
         return readingResult;
