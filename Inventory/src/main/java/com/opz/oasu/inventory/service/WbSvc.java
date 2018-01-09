@@ -2,12 +2,9 @@ package com.opz.oasu.inventory.service;
 
 import android.os.Handler;
 import android.app.Application;
-import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Looper;
-import android.preference.PreferenceManager;
 import android.util.Log;
-import android.view.View;
 import android.widget.ProgressBar;
 
 import com.opz.oasu.inventory.R;
@@ -38,19 +35,12 @@ public class WbSvc {
 
     private static final String MAIN_SHEET_NAME = "Лист1";
 
-    private final Application application;
-
-    private final SharedPreferences sharedPreferences;
-
     private final String LOGGER_SOURCE_WORKBOOK_EXISTENCE_CHECKING_START;
     private final String LOGGER_SOURCE_WORKBOOK_VALIDITY_CHECKING_START;
 
     @Inject
     WbSvc(Application application) {
-        this.application = application;
-        this.sharedPreferences = PreferenceManager.getDefaultSharedPreferences(application);
-
-        Resources resources = this.application.getResources();
+        Resources resources = application.getResources();
 
         this.LOGGER_SOURCE_WORKBOOK_EXISTENCE_CHECKING_START =
                 resources.getString(R.string.logger_workbook_service_source_workbook_checking_availability_checking_start);
