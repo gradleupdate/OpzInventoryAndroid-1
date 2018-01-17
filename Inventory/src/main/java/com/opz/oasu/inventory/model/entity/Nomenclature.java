@@ -32,6 +32,7 @@ public class Nomenclature {
     static final String RESPONSIBLE_PERSON_ID_COLUMN_NAME           = "responsible_person_id";
 
     private static final String SAP_NUMBER_COLUMN_NAME              = "sap_number";
+    private static final String SUB_NUMBER_COLUMN_NAME              = "subnumber";
     private static final String INVENTORY_CLASS_COLUMN_NAME         = "inventory_class";
     private static final String INTRODUCTION_DATE_COLUMN_NAME       = "introduction_date";
     private static final String SERIAL_NUMBER_COLUMN_NAME           = "serial_number";
@@ -58,8 +59,11 @@ public class Nomenclature {
     @ColumnInfo(name = SAP_NUMBER_COLUMN_NAME)
     private String sapNumber;
 
+    @ColumnInfo(name = SUB_NUMBER_COLUMN_NAME)
+    private String subNumber;
+
     @ColumnInfo(name = INVENTORY_CLASS_COLUMN_NAME)
-    private long inventoryClass;
+    private String inventoryClass;
 
     @ColumnInfo(name = DESCRIPTION_COLUMN_NAME)
     private String description;
@@ -71,7 +75,7 @@ public class Nomenclature {
     private String serialNumber;
 
     @ColumnInfo(name = INVENTORY_NUMBER_COLUMN_NAME)
-    private long inventoryNumber;
+    private String inventoryNumber;
 
     @ColumnInfo(name = IS_MARKED_COLUMN_NAME)
     private boolean isMarked;
@@ -137,11 +141,19 @@ public class Nomenclature {
         this.sapNumber = sapNumber;
     }
 
-    public long getInventoryClass() {
+    public String getSubNumber() {
+        return subNumber;
+    }
+
+    public void setSubNumber(String subNumber) {
+        this.subNumber = subNumber;
+    }
+
+    public String getInventoryClass() {
         return inventoryClass;
     }
 
-    public void setInventoryClass(long inventoryClass) {
+    public void setInventoryClass(String inventoryClass) {
         this.inventoryClass = inventoryClass;
     }
 
@@ -169,11 +181,11 @@ public class Nomenclature {
         this.serialNumber = serialNumber;
     }
 
-    public long getInventoryNumber() {
+    public String getInventoryNumber() {
         return inventoryNumber;
     }
 
-    public void setInventoryNumber(long inventoryNumber) {
+    public void setInventoryNumber(String inventoryNumber) {
         this.inventoryNumber = inventoryNumber;
     }
 

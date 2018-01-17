@@ -13,12 +13,20 @@ import android.widget.ProgressBar;
 import com.opz.oasu.inventory.IntentRequestCodes;
 import com.opz.oasu.inventory.R;
 import com.opz.oasu.inventory.model.entity.Nomenclature;
+import com.opz.oasu.inventory.model.entity.ResponsiblePerson;
+import com.opz.oasu.inventory.service.ParsedRowStruct;
 import com.opz.oasu.inventory.service.WbSvc;
 import com.opz.oasu.inventory.ui.common.view.fragment.presenter.BasePresenter;
 import com.opz.oasu.inventory.ui.details.fragment.view.DetailsView;
 
+import org.apache.poi.ss.usermodel.Row;
+
 import java.io.File;
+import java.math.BigDecimal;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Locale;
 
 import javax.inject.Inject;
 
@@ -96,8 +104,8 @@ public final class DetailsPresenterImpl extends BasePresenter<DetailsView> imple
                     progressBar.setVisibility(View.VISIBLE);
                 }
             });
-            List<Nomenclature> nomenclatures = wbSvc.readWb(wbFile, progressBar);
-            Log.d(LOGGER_TAG, nomenclatures.toString());
+            List<ParsedRowStruct> parsedRows = wbSvc.readWb(wbFile, progressBar);
+            Log.d(LOGGER_TAG, parsedRows.toString());
             activity.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
@@ -112,5 +120,61 @@ public final class DetailsPresenterImpl extends BasePresenter<DetailsView> imple
         } else {
             Log.d(LOGGER_TAG, "File not exists.");
         }
+    }
+
+    private Nomenclature parseNomenclature(Row row) {
+        Nomenclature nomenclature = new Nomenclature();
+
+        nomenclature.setBarcode(barcode);
+        nomenclature.setSapNumber(sapNumber);
+        nomenclature.setSubNumber(subNumber);
+        nomenclature.setInventoryClass(inventoryClass);
+        nomenclature.setDescription(description);
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault());
+        try {
+            nomenclature.setIntroductionDate(dateFormat.parse(introductionDateString));
+        } catch (ParseException pe) {
+            Log.e(LOGGER_TAG, pe.getLocalizedMessage());
+        }
+
+        nomenclature.setSerialNumber(serialNumber);
+        nomenclature.setInventoryNumber(inventoryNumber);
+
+        double isMarkedNumber = isMarked;
+        boolean isMarked = (isMarkedNumber == 1);
+        nomenclature.setMarked(isMarked);
+
+        nomenclature.setDepartmentNumber(Integer.parseInt(departmentNumber));
+        nomenclature.setDepartmentDescription(departmentDescription);
+        nomenclature.setPlanCount((long) planCount);
+        nomenclature.setObjectCount((long) objectsCount);
+
+        boolean isNew = (isNewNumber == 1);
+        nomenclature.setNew(isNew);
+
+        boolean isDeleted = (isDeletedNumber == 1);
+        nomenclature.setDeleted(isDeleted);
+
+        nomenclature.setTypeLabel(typeLabel);
+        nomenclature.setInitialCost(BigDecimal.valueOf(initialCost));
+        nomenclature.setLeastCost(BigDecimal.valueOf(leastCost));
+
+
+        long responsiblePersonTableNumber = (long) responsiblePersonTableNumber;
+        ResponsiblePerson responsiblePerson = parseResponsiblePerson(responsiblePersonName, responsiblePersonTableNumber);
+        nomenclature.setResponsiblePersonId(responsiblePerson.getId());
+
+
+        nomenclature.setLocation(location);
+
+        return nomenclature;
+    }
+
+    private ResponsiblePerson parseResponsiblePerson(String name, long tableNumber) {
+        ResponsiblePerson responsiblePerson = new ResponsiblePerson();
+        responsiblePerson.setName(name);
+        responsiblePerson.setTableNumber(tableNumber);
+        return responsiblePerson;
     }
 }
