@@ -19,7 +19,6 @@ import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasFragmentInjector;
 
-
 public abstract class BaseFragment extends Fragment implements HasFragmentInjector {
 
     @Inject

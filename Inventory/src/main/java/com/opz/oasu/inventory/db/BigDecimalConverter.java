@@ -4,7 +4,6 @@ import android.arch.persistence.room.TypeConverter;
 
 import java.math.BigDecimal;
 
-
 public final class BigDecimalConverter {
 
     private static final int NUMBER_OF_FRACTIONS = 2;

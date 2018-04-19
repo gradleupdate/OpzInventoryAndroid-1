@@ -11,7 +11,6 @@ import javax.inject.Named;
 import dagger.Binds;
 import dagger.Module;
 
-
 @Module(includes = {
         BaseFragmentModule.class,
         DetailsPresenterModule.class})

@@ -15,7 +15,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-
 public final class StartPresenterImpl extends BasePresenter<StartView> implements StartPresenter {
 
     private static final String LOGGER_TAG = StartPresenterImpl.class.getName();

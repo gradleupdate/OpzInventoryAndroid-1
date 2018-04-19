@@ -9,7 +9,6 @@ import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasActivityInjector;
 
-
 public class InventoryApp extends Application implements HasActivityInjector {
 
     @Inject

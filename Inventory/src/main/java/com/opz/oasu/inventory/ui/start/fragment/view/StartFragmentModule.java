@@ -11,7 +11,6 @@ import com.opz.oasu.inventory.di.FragmentScope;
 import com.opz.oasu.inventory.ui.common.view.fragment.BaseFragmentModule;
 import com.opz.oasu.inventory.ui.start.fragment.presenter.StartPresenterModule;
 
-
 @Module(includes = {
         BaseFragmentModule.class,
         StartPresenterModule.class})

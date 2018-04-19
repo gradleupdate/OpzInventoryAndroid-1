@@ -11,7 +11,6 @@ import dagger.Module;
 import dagger.Provides;
 import com.opz.oasu.inventory.di.ActivityScope;
 
-
 @Module
 public abstract class BaseActivityModule {
 

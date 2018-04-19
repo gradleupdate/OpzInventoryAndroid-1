@@ -16,7 +16,6 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-
 public final class MainActivity extends BaseActivity {
 
     @Inject

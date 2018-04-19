@@ -12,7 +12,6 @@ import dagger.Binds;
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 
-
 @Module(includes = BaseActivityModule.class)
 public abstract class SettingsActivityModule {
 

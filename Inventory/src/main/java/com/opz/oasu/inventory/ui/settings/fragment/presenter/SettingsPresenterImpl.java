@@ -5,7 +5,6 @@ import com.opz.oasu.inventory.ui.settings.fragment.view.SettingsFragment;
 
 import javax.inject.Inject;
 
-
 public class SettingsPresenterImpl extends BasePresenter<SettingsFragment> implements SettingsPresenter {
 
     @Inject

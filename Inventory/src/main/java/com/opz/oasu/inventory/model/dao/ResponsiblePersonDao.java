@@ -13,7 +13,6 @@ import com.opz.oasu.inventory.model.entity.ResponsiblePerson;
 import static com.opz.oasu.inventory.model.entity.ResponsiblePerson.IS_VALID_COLUMN_NAME;
 import static com.opz.oasu.inventory.model.entity.ResponsiblePerson.RESPONSIBLE_PERSON_TABLE_NAME;
 
-
 @Dao
 public interface ResponsiblePersonDao {
 

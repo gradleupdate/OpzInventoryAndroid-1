@@ -2,7 +2,6 @@ package com.opz.oasu.inventory.db;
 
 import android.arch.persistence.room.TypeConverter;
 
-
 public final class BooleanConverter {
 
     @TypeConverter

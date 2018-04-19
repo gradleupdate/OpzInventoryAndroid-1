@@ -14,7 +14,6 @@ import com.opz.oasu.inventory.ui.details.fragment.view.DetailsFragmentModule;
 import com.opz.oasu.inventory.ui.start.fragment.view.StartFragment;
 import com.opz.oasu.inventory.ui.start.fragment.view.StartFragmentModule;
 
-
 @Module(includes = BaseActivityModule.class)
 public abstract class MainActivityModule {
 

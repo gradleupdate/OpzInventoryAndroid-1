@@ -5,7 +5,6 @@ import com.opz.oasu.inventory.di.FragmentScope;
 import dagger.Binds;
 import dagger.Module;
 
-
 @Module
 public abstract class DetailsPresenterModule {
 

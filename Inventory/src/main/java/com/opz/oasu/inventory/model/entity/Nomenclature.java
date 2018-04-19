@@ -10,12 +10,21 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Objects;
 
+import lombok.AccessLevel;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import static com.opz.oasu.inventory.model.entity.Nomenclature.BARCODE_COLUMN_NAME;
 import static com.opz.oasu.inventory.model.entity.Nomenclature.DESCRIPTION_COLUMN_NAME;
 import static com.opz.oasu.inventory.model.entity.Nomenclature.ID_COLUMN_NAME;
 import static com.opz.oasu.inventory.model.entity.Nomenclature.RESPONSIBLE_PERSON_ID_COLUMN_NAME;
 
-
+@Data
+@NoArgsConstructor
+@EqualsAndHashCode(exclude = {"id"})
 @Entity(foreignKeys = @ForeignKey(
                 entity = ResponsiblePerson.class,
                 parentColumns = "id",
@@ -49,70 +58,113 @@ public class Nomenclature {
     private static final String LEAST_COST_COLUMN_NAME              = "least_cost";
     private static final String LOCATION_COLUMN_NAME                = "location";
 
+    @Getter
+    @Setter
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = ID_COLUMN_NAME)
     private long id;
 
+    @Getter
+    @Setter
     @ColumnInfo(name = BARCODE_COLUMN_NAME)
     private String barcode;
 
+    @Getter
+    @Setter
     @ColumnInfo(name = SAP_NUMBER_COLUMN_NAME)
     private String sapNumber;
 
+    @Getter
+    @Setter
     @ColumnInfo(name = SUB_NUMBER_COLUMN_NAME)
     private String subNumber;
 
+    @Getter
+    @Setter
     @ColumnInfo(name = INVENTORY_CLASS_COLUMN_NAME)
     private String inventoryClass;
 
+    @Getter
+    @Setter
     @ColumnInfo(name = DESCRIPTION_COLUMN_NAME)
     private String description;
 
+    @Getter
+    @Setter
     @ColumnInfo(name = INTRODUCTION_DATE_COLUMN_NAME)
     private Date introductionDate;
 
+    @Getter
+    @Setter
     @ColumnInfo(name = SERIAL_NUMBER_COLUMN_NAME)
     private String serialNumber;
 
+    @Getter
+    @Setter
     @ColumnInfo(name = INVENTORY_NUMBER_COLUMN_NAME)
     private String inventoryNumber;
 
+    @Getter
+    @Setter
     @ColumnInfo(name = IS_MARKED_COLUMN_NAME)
     private boolean isMarked;
 
+    @Getter
+    @Setter
     @ColumnInfo(name = DEPARTMENT_NUMBER_COLUMN_NAME)
     private int departmentNumber;
 
+    @Getter
+    @Setter
     @ColumnInfo(name = DEPARTMENT_DESCRIPTION_COLUMN_NAME)
     private String departmentDescription;
 
+    @Getter
+    @Setter
     @ColumnInfo(name = PLAN_COUNT_COLUMN_NAME)
     private long planCount;
 
+    @Getter
+    @Setter
     @ColumnInfo(name = OBJECT_COUNT_COLUMN_NAME)
     private long objectCount;
 
+    @Getter
+    @Setter
     @ColumnInfo(name = IS_NEW_COLUMN_NAME)
     private boolean isNew;
 
+    @Getter
+    @Setter
     @ColumnInfo(name = IS_DELETED_COLUMN_NAME)
     private boolean isDeleted;
 
+    @Getter
+    @Setter
     @ColumnInfo(name = TYPE_LABEL_COLUMN_NAME)
     private String typeLabel;
 
+    @Getter
+    @Setter
     @ColumnInfo(name = INITIAL_COST_COLUMN_NAME)
     private BigDecimal initialCost;
 
+    @Getter
+    @Setter
     @ColumnInfo(name = LEAST_COST_COLUMN_NAME)
     private BigDecimal leastCost;
 
+    @Getter
+    @Setter
     @ColumnInfo(name = RESPONSIBLE_PERSON_ID_COLUMN_NAME)
     private long responsiblePersonId;
 
+    @Getter
+    @Setter
     @ColumnInfo(name = LOCATION_COLUMN_NAME)
     private String location;
 
+    /*
     public Nomenclature() { // JPA only
     }
 
@@ -315,4 +367,5 @@ public class Nomenclature {
     public int hashCode() {
         return Objects.hash(getBarcode(), getSapNumber(), getInventoryClass(), getDescription(), getIntroductionDate(), getSerialNumber(), getInventoryNumber(), isMarked(), getDepartmentNumber(), getDepartmentDescription(), getPlanCount(), getObjectCount(), isNew(), isDeleted(), getTypeLabel(), getInitialCost(), getLeastCost(), getResponsiblePersonId(), getLocation());
     }
+    */
 }

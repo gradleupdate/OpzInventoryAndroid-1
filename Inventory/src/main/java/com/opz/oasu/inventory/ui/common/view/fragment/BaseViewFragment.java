@@ -8,7 +8,6 @@ import javax.inject.Inject;
 import com.opz.oasu.inventory.ui.common.view.fragment.presenter.Presenter;
 import com.opz.oasu.inventory.ui.common.view.MVPView;
 
-
 public abstract class BaseViewFragment<T extends Presenter> extends BaseFragment
         implements MVPView {
 

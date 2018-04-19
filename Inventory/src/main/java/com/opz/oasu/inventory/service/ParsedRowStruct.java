@@ -2,7 +2,6 @@ package com.opz.oasu.inventory.service;
 
 import java.util.Objects;
 
-
 public final class ParsedRowStruct {
     private final String barcode;
     private final String sapNumber;

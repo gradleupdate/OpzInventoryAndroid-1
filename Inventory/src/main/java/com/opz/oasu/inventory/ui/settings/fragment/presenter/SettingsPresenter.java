@@ -6,7 +6,6 @@ import android.net.Uri;
 import com.opz.oasu.inventory.ui.common.view.fragment.presenter.Presenter;
 import com.opz.oasu.inventory.IntentRequestCodes;
 
-
 public interface SettingsPresenter extends Presenter {
 
     void onFragmentStarts();

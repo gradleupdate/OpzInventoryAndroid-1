@@ -10,7 +10,6 @@ import dagger.Provides;
 
 import com.opz.oasu.inventory.di.FragmentScope;
 
-
 @Module
 public abstract class BaseFragmentModule {
 

@@ -5,13 +5,20 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 
-import java.util.Objects;
+import lombok.AccessLevel;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import static com.opz.oasu.inventory.model.entity.ResponsiblePerson.ID_COLUMN_NAME;
 import static com.opz.oasu.inventory.model.entity.ResponsiblePerson.NAME_COLUMN_NAME;
 import static com.opz.oasu.inventory.model.entity.ResponsiblePerson.RESPONSIBLE_PERSON_TABLE_NAME;
 
-
+@Data
+@EqualsAndHashCode(exclude = {"id"})
+@NoArgsConstructor
 @Entity(tableName = RESPONSIBLE_PERSON_TABLE_NAME,
         indices = {
                 @Index(value = {ID_COLUMN_NAME, NAME_COLUMN_NAME})})
@@ -25,19 +32,27 @@ public class ResponsiblePerson {
 
     private static final String TABLE_NUMBER_COLUMN_NAME        = "table_number";
 
+    @Getter
+    @Setter
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = ID_COLUMN_NAME)
     private long id;
 
+    @Getter
+    @Setter
     @ColumnInfo(name = NAME_COLUMN_NAME)
     public String name;
 
+    @Getter
+    @Setter
     @ColumnInfo(name = TABLE_NUMBER_COLUMN_NAME)
     private long tableNumber;
 
+    @Getter
+    @Setter
     @ColumnInfo(name = IS_VALID_COLUMN_NAME)
     private boolean valid;
-
+    /*
     public ResponsiblePerson() { // JPA only
 
     }
@@ -89,4 +104,5 @@ public class ResponsiblePerson {
     public int hashCode() {
         return Objects.hash(getName(), getTableNumber(), isValid());
     }
+    */
 }

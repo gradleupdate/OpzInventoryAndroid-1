@@ -30,7 +30,6 @@ import java.util.Locale;
 
 import javax.inject.Inject;
 
-
 public final class DetailsPresenterImpl extends BasePresenter<DetailsView> implements DetailsPresenter {
 
     private static final String LOGGER_TAG = DetailsPresenterImpl.class.getName();
@@ -124,7 +123,7 @@ public final class DetailsPresenterImpl extends BasePresenter<DetailsView> imple
 
     private Nomenclature parseNomenclature(Row row) {
         Nomenclature nomenclature = new Nomenclature();
-
+        /*
         nomenclature.setBarcode(barcode);
         nomenclature.setSapNumber(sapNumber);
         nomenclature.setSubNumber(subNumber);
@@ -165,9 +164,8 @@ public final class DetailsPresenterImpl extends BasePresenter<DetailsView> imple
         ResponsiblePerson responsiblePerson = parseResponsiblePerson(responsiblePersonName, responsiblePersonTableNumber);
         nomenclature.setResponsiblePersonId(responsiblePerson.getId());
 
-
         nomenclature.setLocation(location);
-
+        */
         return nomenclature;
     }
 

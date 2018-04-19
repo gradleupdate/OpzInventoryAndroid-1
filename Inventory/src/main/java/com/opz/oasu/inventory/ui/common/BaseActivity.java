@@ -19,7 +19,6 @@ import dagger.android.HasFragmentInjector;
 
 import com.opz.oasu.inventory.navigation.Navigator;
 
-
 public abstract class BaseActivity extends Activity implements HasFragmentInjector {
 
     @Inject

@@ -8,7 +8,6 @@ import com.opz.oasu.inventory.ui.settings.SettingsActivity;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-
 @Singleton
 public class Navigator {
 

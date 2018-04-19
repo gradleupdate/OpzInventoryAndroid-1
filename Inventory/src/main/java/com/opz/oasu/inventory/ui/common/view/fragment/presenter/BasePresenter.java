@@ -5,7 +5,6 @@ import android.support.annotation.Nullable;
 
 import com.opz.oasu.inventory.ui.common.view.MVPView;
 
-
 public abstract class BasePresenter<T extends MVPView> implements Presenter {
 
     protected final T view;

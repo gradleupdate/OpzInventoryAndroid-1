@@ -30,7 +30,6 @@ import butterknife.OnClick;
 
 import static com.opz.oasu.inventory.IntentRequestCodes.SOURCE_SPREADSHEET_FILE_SELECT_REQUEST_CODE;
 
-
 public class DetailsFragment extends BaseViewFragment<DetailsPresenter> implements DetailsView, DetailsFragmentActionListener {
 
     @BindView(R.id.fragment_details_content_header)

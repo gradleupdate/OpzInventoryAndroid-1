@@ -16,7 +16,6 @@ import javax.inject.Inject;
 
 import butterknife.OnClick;
 
-
 public class StartFragment extends BaseViewFragment<StartPresenter> implements StartView, StartFragmentActionListener {
 
     @Inject
