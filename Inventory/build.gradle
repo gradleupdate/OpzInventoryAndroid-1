@@ -26,17 +26,17 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     implementation 'com.android.support:design:27.1.1'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     def final daggerVersion = '2.15'
     def final butterKnifeVersion = '8.8.1'
     def final lifecycleVersion = '1.1.1'
-    def final roomVersion = '1.0.0'
+    def final roomVersion = '1.1.0'
     def final poiVersion = '3.17'
     def final fasterXmlVersion = '1.0.0'
     //def final zxingVersion = '3.3.2'
-    def final googlePlayServicesVersion = '15.0.0'
+    def final googlePlayServicesVersion = '15.0.2'
     def final lombokVersion = '1.16.20'
 
     implementation "com.google.dagger:dagger:$daggerVersion"
